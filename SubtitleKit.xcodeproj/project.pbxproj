@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D222067182236ED00A3113A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D222066182236ED00A3113A /* Cocoa.framework */; };
+		1D222071182236ED00A3113A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D22206F182236ED00A3113A /* InfoPlist.strings */; };
+		1D222075182236ED00A3113A /* SubtitleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D222074182236ED00A3113A /* SubtitleKit.m */; };
+		1D22207C182236ED00A3113A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D22207B182236ED00A3113A /* XCTest.framework */; };
+		1D22207D182236ED00A3113A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D222066182236ED00A3113A /* Cocoa.framework */; };
+		1D222080182236ED00A3113A /* SubtitleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D222063182236ED00A3113A /* SubtitleKit.framework */; };
+		1D222086182236ED00A3113A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D222084182236ED00A3113A /* InfoPlist.strings */; };
+		1D222088182236ED00A3113A /* SubtitleKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D222087182236ED00A3113A /* SubtitleKitTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D22207E182236ED00A3113A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D22205A182236ED00A3113A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D222062182236ED00A3113A;
+			remoteInfo = SubtitleKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D222063182236ED00A3113A /* SubtitleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SubtitleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D222066182236ED00A3113A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1D222069182236ED00A3113A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D22206A182236ED00A3113A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1D22206B182236ED00A3113A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1D22206E182236ED00A3113A /* SubtitleKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SubtitleKit-Info.plist"; sourceTree = "<group>"; };
+		1D222070182236ED00A3113A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1D222072182236ED00A3113A /* SubtitleKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SubtitleKit-Prefix.pch"; sourceTree = "<group>"; };
+		1D222073182236ED00A3113A /* SubtitleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubtitleKit.h; sourceTree = "<group>"; };
+		1D222074182236ED00A3113A /* SubtitleKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubtitleKit.m; sourceTree = "<group>"; };
+		1D22207A182236ED00A3113A /* SubtitleKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubtitleKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D22207B182236ED00A3113A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1D222083182236ED00A3113A /* SubtitleKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SubtitleKitTests-Info.plist"; sourceTree = "<group>"; };
+		1D222085182236ED00A3113A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1D222087182236ED00A3113A /* SubtitleKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubtitleKitTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D22205F182236ED00A3113A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D222067182236ED00A3113A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D222077182236ED00A3113A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D22207D182236ED00A3113A /* Cocoa.framework in Frameworks */,
+				1D22207C182236ED00A3113A /* XCTest.framework in Frameworks */,
+				1D222080182236ED00A3113A /* SubtitleKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D222059182236ED00A3113A = {
+			isa = PBXGroup;
+			children = (
+				1D22206C182236ED00A3113A /* SubtitleKit */,
+				1D222081182236ED00A3113A /* SubtitleKitTests */,
+				1D222065182236ED00A3113A /* Frameworks */,
+				1D222064182236ED00A3113A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D222064182236ED00A3113A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D222063182236ED00A3113A /* SubtitleKit.framework */,
+				1D22207A182236ED00A3113A /* SubtitleKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D222065182236ED00A3113A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D222066182236ED00A3113A /* Cocoa.framework */,
+				1D22207B182236ED00A3113A /* XCTest.framework */,
+				1D222068182236ED00A3113A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D222068182236ED00A3113A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D222069182236ED00A3113A /* Foundation.framework */,
+				1D22206A182236ED00A3113A /* CoreData.framework */,
+				1D22206B182236ED00A3113A /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1D22206C182236ED00A3113A /* SubtitleKit */ = {
+			isa = PBXGroup;
+			children = (
+				1D222073182236ED00A3113A /* SubtitleKit.h */,
+				1D222074182236ED00A3113A /* SubtitleKit.m */,
+				1D22206D182236ED00A3113A /* Supporting Files */,
+			);
+			path = SubtitleKit;
+			sourceTree = "<group>";
+		};
+		1D22206D182236ED00A3113A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D22206E182236ED00A3113A /* SubtitleKit-Info.plist */,
+				1D22206F182236ED00A3113A /* InfoPlist.strings */,
+				1D222072182236ED00A3113A /* SubtitleKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D222081182236ED00A3113A /* SubtitleKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D222087182236ED00A3113A /* SubtitleKitTests.m */,
+				1D222082182236ED00A3113A /* Supporting Files */,
+			);
+			path = SubtitleKitTests;
+			sourceTree = "<group>";
+		};
+		1D222082182236ED00A3113A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D222083182236ED00A3113A /* SubtitleKitTests-Info.plist */,
+				1D222084182236ED00A3113A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1D222060182236ED00A3113A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1D222062182236ED00A3113A /* SubtitleKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D22208B182236ED00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKit" */;
+			buildPhases = (
+				1D22205E182236ED00A3113A /* Sources */,
+				1D22205F182236ED00A3113A /* Frameworks */,
+				1D222060182236ED00A3113A /* Headers */,
+				1D222061182236ED00A3113A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SubtitleKit;
+			productName = SubtitleKit;
+			productReference = 1D222063182236ED00A3113A /* SubtitleKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1D222079182236ED00A3113A /* SubtitleKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D22208E182236ED00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKitTests" */;
+			buildPhases = (
+				1D222076182236ED00A3113A /* Sources */,
+				1D222077182236ED00A3113A /* Frameworks */,
+				1D222078182236ED00A3113A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D22207F182236ED00A3113A /* PBXTargetDependency */,
+			);
+			name = SubtitleKitTests;
+			productName = SubtitleKitTests;
+			productReference = 1D22207A182236ED00A3113A /* SubtitleKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D22205A182236ED00A3113A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = muski;
+				TargetAttributes = {
+					1D222079182236ED00A3113A = {
+						TestTargetID = 1D222062182236ED00A3113A;
+					};
+				};
+			};
+			buildConfigurationList = 1D22205D182236ED00A3113A /* Build configuration list for PBXProject "SubtitleKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1D222059182236ED00A3113A;
+			productRefGroup = 1D222064182236ED00A3113A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D222062182236ED00A3113A /* SubtitleKit */,
+				1D222079182236ED00A3113A /* SubtitleKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D222061182236ED00A3113A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D222071182236ED00A3113A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D222078182236ED00A3113A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D222086182236ED00A3113A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D22205E182236ED00A3113A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D222075182236ED00A3113A /* SubtitleKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D222076182236ED00A3113A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D222088182236ED00A3113A /* SubtitleKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D22207F182236ED00A3113A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D222062182236ED00A3113A /* SubtitleKit */;
+			targetProxy = 1D22207E182236ED00A3113A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1D22206F182236ED00A3113A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D222070182236ED00A3113A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1D222084182236ED00A3113A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D222085182236ED00A3113A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D222089182236ED00A3113A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1D22208A182236ED00A3113A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1D22208C182236ED00A3113A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SubtitleKit/SubtitleKit-Prefix.pch";
+				INFOPLIST_FILE = "SubtitleKit/SubtitleKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1D22208D182236ED00A3113A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SubtitleKit/SubtitleKit-Prefix.pch";
+				INFOPLIST_FILE = "SubtitleKit/SubtitleKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1D22208F182236ED00A3113A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SubtitleKit.framework/Versions/A/SubtitleKit";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SubtitleKit/SubtitleKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SubtitleKitTests/SubtitleKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1D222090182236ED00A3113A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SubtitleKit.framework/Versions/A/SubtitleKit";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SubtitleKit/SubtitleKit-Prefix.pch";
+				INFOPLIST_FILE = "SubtitleKitTests/SubtitleKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D22205D182236ED00A3113A /* Build configuration list for PBXProject "SubtitleKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D222089182236ED00A3113A /* Debug */,
+				1D22208A182236ED00A3113A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D22208B182236ED00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D22208C182236ED00A3113A /* Debug */,
+				1D22208D182236ED00A3113A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1D22208E182236ED00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D22208F182236ED00A3113A /* Debug */,
+				1D222090182236ED00A3113A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D22205A182236ED00A3113A /* Project object */;
+}
