@@ -640,6 +640,7 @@
 				1D22208D182236ED00A3113A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D2220BC1822394B00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKit Tests" */ = {
 			isa = XCConfigurationList;
@@ -648,6 +649,7 @@
 				1D2220BE1822394B00A3113A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
