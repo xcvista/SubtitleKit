@@ -1,0 +1,8 @@
+framework module SubtitleKit {
+    umbrella header "SubtitleKit.h"
+    
+    export *
+    module * {
+        export *
+    }
+}

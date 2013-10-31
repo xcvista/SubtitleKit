@@ -10,24 +10,24 @@
 #import "SKSubtitleLine.h"
 #import "SKSubtitleTrack.h"
 
-#import "SKCommon_private.h"
+#import <MSBooster/MSBooster_Private.h>
 
 @implementation NSScanner (SKSubrip)
 
 - (BOOL)_SKSubripScanTimetag:(NSTimeInterval *)time
 {
-    NSUInteger hour, min, sec, msec;
-    _SKPrepareRollback();
+    NSInteger hour, min, sec, msec;
+    MSScannerBegin();
     
-    _SKAssertRollback([self scanInteger:&hour]);
-    _SKAssertRollback([self scanString:@":" intoString:NULL]);
-    _SKAssertRollback([self scanInteger:&min]);
-    _SKAssertRollback([self scanString:@":" intoString:NULL]);
-    _SKAssertRollback([self scanInteger:&sec]);
-    _SKAssertRollback([self scanString:@"," intoString:NULL]);
-    _SKAssertRollback([self scanInteger:&msec]);
+    MSScannerAssert([self scanInteger:&hour]);
+    MSScannerAssert([self scanString:@":" intoString:NULL]);
+    MSScannerAssert([self scanInteger:&min]);
+    MSScannerAssert([self scanString:@":" intoString:NULL]);
+    MSScannerAssert([self scanInteger:&sec]);
+    MSScannerAssert([self scanString:@"," intoString:NULL]);
+    MSScannerAssert([self scanInteger:&msec]);
     
-    NSAssignPointer(time, SKTimeIntervalFromComponents(hour, min, sec, msec, 0.0));
+    MSAssignPointer(time, SKTimeIntervalFromComponents(hour, min, sec, msec, 0.0));
     return YES;
 }
 
@@ -35,27 +35,27 @@
                                              from:(NSTimeInterval *)from
                                                to:(NSTimeInterval *)to
 {
-    NSUInteger ident;
+    NSInteger ident;
     NSTimeInterval ftime, ttime;
     NSCharacterSet *ignores = [self charactersToBeSkipped];
-    _SKPrepareRollback();
+    MSScannerBegin();
     
     [self setCharactersToBeSkipped:nil];
     
-    _SKAssertRollback([self scanInteger:&ident]);
+    MSScannerAssert([self scanInteger:&ident]);
     [self scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet]
                          intoString:NULL];
-    _SKAssertRollback([self scanCharactersFromSet:[NSCharacterSet newlineCharacterSet]
+    MSScannerAssert([self scanCharactersFromSet:[NSCharacterSet newlineCharacterSet]
                                        intoString:NULL]);
-    _SKAssertRollback([self _SKSubripScanTimetag:&ftime]);
-    _SKAssertRollback([self scanString:@" --> " intoString:NULL]);
-    _SKAssertRollback([self _SKSubripScanTimetag:&ttime]);
+    MSScannerAssert([self _SKSubripScanTimetag:&ftime]);
+    MSScannerAssert([self scanString:@" --> " intoString:NULL]);
+    MSScannerAssert([self _SKSubripScanTimetag:&ttime]);
     
     [self setCharactersToBeSkipped:ignores];
     
-    NSAssignPointer(identifier, ident);
-    NSAssignPointer(from, ftime);
-    NSAssignPointer(to, ttime);
+    MSAssignPointer(identifier, ident);
+    MSAssignPointer(from, ftime);
+    MSAssignPointer(to, ttime);
     return YES;
 }
 
@@ -71,7 +71,7 @@ static __inline NSString *_SKStringFromTimetag(NSTimeInterval tag)
 {
     NSUInteger hour, minute, second, millisecond;
     SKComponentsFromTimeInterval(tag, &hour, &minute, &second, &millisecond);
-    return NSSTR(@"%02lu:%02lu:%02lu,%03lu", hour, minute, second, millisecond);
+    return MSSTR(@"%02lu:%02lu:%02lu,%03lu", hour, minute, second, millisecond);
 }
 
 @implementation SKSubtitleLine (SKSubripOutput)
@@ -90,7 +90,7 @@ static __inline NSString *_SKStringFromTimetag(NSTimeInterval tag)
         contentRepresentation = [self.content description];
     }
     
-    return NSSTR(@"%lu\n%@ --> %@\n%@\n\n",
+    return MSSTR(@"%lu\n%@ --> %@\n%@\n\n",
                  identifier,
                  _SKStringFromTimetag(self.start),
                  _SKStringFromTimetag([self end]),

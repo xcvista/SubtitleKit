@@ -7,6 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import <SubtitleKit/SubtitleKit.h>
 
 @interface SKLyricParsingTest : SenTestCase
 
@@ -26,9 +27,46 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testLRCParsing
 {
-    STFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKLyricFormat trackFromContentsOfURL:[thisBundle URLForResource:@"Test" withExtension:@"lrc"]];
+    STAssertNotNil(track, nil);
+    
+    // Metadata
+    STAssertEqualObjects(track[SKArtistMetadataKey], @"Test", nil);
+    STAssertEqualObjects(track[SKAlbumMetadataKey], @"Foo", nil);
+    STAssertEqualObjects(track[SKTitleMetadataKey], @"Bar", nil);
+    STAssertEqualObjects(track[SKMakerMetadataKey], @"Someone", nil);
+    
+    // Timetags
+    for (SKSubtitleLine *line in track.lines)
+    {
+        STAssertEqualObjects(MSSTR(@"%.1lf-%.1lf", line.start, line.duration), line.content, nil);
+    }
+}
+
+- (void)testLRCOffset
+{
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKLyricFormat trackFromContentsOfURL:[thisBundle URLForResource:@"TestOffset" withExtension:@"lrc"]];
+    STAssertNotNil(track, nil);
+    
+    // Metadata
+    STAssertEqualObjects(track[SKArtistMetadataKey], @"Test", nil);
+    STAssertEqualObjects(track[SKAlbumMetadataKey], @"Foo", nil);
+    STAssertEqualObjects(track[SKTitleMetadataKey], @"Bar", nil);
+    STAssertEqualObjects(track[SKMakerMetadataKey], @"Someone", nil);
+    
+    // Timetags
+    for (SKSubtitleLine *line in track.lines)
+    {
+        STAssertEqualObjects(MSSTR(@"%.1lf-%.1lf", line.start, line.duration), line.content, nil);
+    }
 }
 
 @end

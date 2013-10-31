@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Everything.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>SubtitleKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>1D222079182236ED00A3113A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1D2220AD1822394B00A3113A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

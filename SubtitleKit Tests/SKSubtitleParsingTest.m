@@ -7,6 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import <SubtitleKit/SubtitleKit.h>
 
 @interface SKSubtitleParsingTest : SenTestCase
 
@@ -26,9 +27,19 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testSubtitleParsing
 {
-    STFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKSubripFormat trackFromContentsOfURL:[thisBundle URLForResource:@"Test" withExtension:@"srt"]];
+    STAssertNotNil(track, nil);
+    
+    // Timetags
+    for (SKSubtitleLine *line in track.lines)
+    {
+        STAssertEqualObjects(MSSTR(@"%.1lf-%.1lf", line.start, line.duration), line.content, nil);
+    }
 }
 
 @end

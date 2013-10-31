@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D222079182236ED00A3113A"
-               BuildableName = "SubtitleKitTests.xctest"
-               BlueprintName = "SubtitleKitTests"
+               BlueprintIdentifier = "1D2220AD1822394B00A3113A"
+               BuildableName = "SubtitleKit Tests.octest"
+               BlueprintName = "SubtitleKit Tests"
                ReferencedContainer = "container:SubtitleKit.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -6,9 +6,15 @@
 //  Copyright (c) 2013 muski. All rights reserved.
 //
 
-#ifndef SubtitleKit_SKSubtitleTrackStrings_h
-#define SubtitleKit_SKSubtitleTrackStrings_h
+#import <MSBooster/MSBooster.h>
 
-
-
-#endif
+MSConstantString(SKTitleMetadataKey, Title);
+MSConstantString(SKArtistMetadataKey, Artist);
+MSConstantString(SKAlbumMetadataKey, Album);
+MSConstantString(SKWriterMetadataKey, Writer);
+MSConstantString(SKComposerMetadataKey, Composer);
+MSConstantString(SKProducerMetadataKey, Producer);
+MSConstantString(SKCopyrightMetadataKey, Copyright);
+MSConstantString(SKMakerMetadataKey, Maker);
+MSConstantString(SKApplicationMetadataKey, Application);
+MSConstantString(SKApplicationVersionMetadataKey, Version);

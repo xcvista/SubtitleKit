@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 muski. All rights reserved.
 //
 
-#import <SubtitleKit/SKCommon.h>
+#import <MSBooster/MSBooster.h>
 
 #ifndef _SUBTITLEKIT_SKSUBTITLETRACK_H_
 #define _SUBTITLEKIT_SKSUBTITLETRACK_H_
@@ -65,16 +65,7 @@ __class SKSubtitleLine;
 
 // Common metadata keys
 
-NSStringConstant(SKTitleMetadataKey, Title);
-NSStringConstant(SKArtistMetadataKey, Artist);
-NSStringConstant(SKAlbumMetadataKey, Album);
-NSStringConstant(SKWriterMetadataKey, Writer);
-NSStringConstant(SKComposerMetadataKey, Composer);
-NSStringConstant(SKProducerMetadataKey, Producer);
-NSStringConstant(SKCopyrightMetadataKey, Copyright);
-NSStringConstant(SKMakerMetadataKey, Maker);
-NSStringConstant(SKApplicationMetadataKey, Application);
-NSStringConstant(SKApplicationVersionMetadataKey, Version);
+#include <SubtitleKit/SKSubtitleTrackStrings.h>
 
 __END_DECLS
 

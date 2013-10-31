@@ -10,6 +10,18 @@
 
 @implementation SKSubtitleFormat
 
++ (SKSubtitleTrack *)trackFromData:(NSData *)data
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
++ (NSData *)dataFromTrack:(SKSubtitleTrack *)track
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 @end
 
 @implementation SKSubtitleFormat (SKHelpers)

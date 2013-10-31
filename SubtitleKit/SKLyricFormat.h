@@ -48,15 +48,6 @@ __class SKSubtitleTrack;
 @end
 
 // LRC metadata keys
-
-NSStringConstant(SKLyricTitleMetadataKey, ti);
-NSStringConstant(SKLyricMakerMetadataKey, by);
-NSStringConstant(SKLyricArtistMetadataKey, ar);
-NSStringConstant(SKLyricAlbumMetadataKey, al);
-NSStringConstant(SKLyricWriterMetadataKey, au);
-NSStringConstant(SKLyricOffsetMetadataKey, offset);
-NSStringConstant(SKLyricApplicationMetadataKey, re);
-NSStringConstant(SKLyricApplicationVersionMetadataKey, ve);
-NSStringConstant(SKLyricLengthMetadataKey, length);
+#include <SubtitleKit/SKLyricFormatStrings.h>
 
 __END_DECLS

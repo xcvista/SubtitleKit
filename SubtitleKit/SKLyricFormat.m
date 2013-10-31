@@ -14,7 +14,7 @@
 #define __REQUIRE_OBJC_DICTIONARY_LITERALS
 #define __REQUIRE_OBJC_ARRAY_LITERALS
 #define __REQUIRE_OBJC_SUBSCRIPTING
-#import "SKCommon_private.h"
+#import <MSBooster/MSBooster_Private.h>
 
 NSDictionary *_SKLyricTranslationTable(void)
 {
@@ -77,54 +77,54 @@ static __inline NSString *_SKLyricMonoline(id obj)
 
 - (BOOL)_SKLyricsScanSquareBrackers:(NSString *__autoreleasing *)string
 {
-    _SKPrepareRollback();
+    MSScannerBegin();
     NSString *buf = nil;
     
-    _SKAssertRollback([self scanString:@"[" intoString:NULL]);
-    _SKAssertRollback([self scanUpToString:@"]" intoString:&buf]);
-    _SKAssertRollback([self scanString:@"]" intoString:NULL]);
+    MSScannerAssert([self scanString:@"[" intoString:NULL]);
+    MSScannerAssert([self scanUpToString:@"]" intoString:&buf]);
+    MSScannerAssert([self scanString:@"]" intoString:NULL]);
     
-    NSAssignPointer(string, buf);
+    MSAssignPointer(string, buf);
     return YES;
 }
 
 - (BOOL)_SKLyricsScanMetadata:(NSString *__autoreleasing *)value withKey:(NSString *__autoreleasing *)key
 {
-    _SKPrepareRollback();
+    MSScannerBegin();
     NSString *buf = nil;
     NSString *skey = nil;
     NSString *sval = nil;
     
-    _SKAssertRollback([self _SKLyricsScanSquareBrackers:&buf]);
+    MSScannerAssert([self _SKLyricsScanSquareBrackers:&buf]);
     
     NSScanner *scanner = [NSScanner scannerWithString:buf];
-    _SKAssertRollback([scanner scanUpToString:@":" intoString:&skey]);
-    _SKAssertRollback([scanner scanString:@":" intoString:NULL]);
+    MSScannerAssert([scanner scanUpToString:@":" intoString:&skey]);
+    MSScannerAssert([scanner scanString:@":" intoString:NULL]);
     sval = [buf substringFromIndex:[scanner scanLocation]];
     
     NSCharacterSet *whitenewline = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-    NSAssignPointer(key, [skey stringByTrimmingCharactersInSet:whitenewline]);
-    NSAssignPointer(value, [sval stringByTrimmingCharactersInSet:whitenewline]);
+    MSAssignPointer(key, [skey stringByTrimmingCharactersInSet:whitenewline]);
+    MSAssignPointer(value, [sval stringByTrimmingCharactersInSet:whitenewline]);
     return YES;
 }
 
 - (BOOL)_SKLyricsScanTimeTag:(NSTimeInterval *)time
 {
-    _SKPrepareRollback();
-    NSUInteger minute, second, centisecond; // note this!
+    MSScannerBegin();
+    NSInteger minute, second, centisecond; // note this!
     NSString *buf = nil;
     
-    _SKAssertRollback([self _SKLyricsScanSquareBrackers:&buf]);
+    MSScannerAssert([self _SKLyricsScanSquareBrackers:&buf]);
     
     NSScanner *scanner = [NSScanner scannerWithString:buf];
-    _SKAssertRollback([scanner scanInteger:&minute]);
-    _SKAssertRollback([scanner scanString:@":" intoString:NULL]);
-    _SKAssertRollback([scanner scanInteger:&second]);
-    _SKAssertRollback([scanner scanString:@"." intoString:NULL]);
-    _SKAssertRollback([scanner scanInteger:&centisecond]);
-    _SKAssertRollback([[[buf substringFromIndex:[scanner scanLocation]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0);
+    MSScannerAssert([scanner scanInteger:&minute]);
+    MSScannerAssert([scanner scanString:@":" intoString:NULL]);
+    MSScannerAssert([scanner scanInteger:&second]);
+    MSScannerAssert([scanner scanString:@"." intoString:NULL]);
+    MSScannerAssert([scanner scanInteger:&centisecond]);
+    MSScannerAssert([[[buf substringFromIndex:[scanner scanLocation]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0);
     
-    NSAssignPointer(time, SKTimeIntervalFromComponents(0, minute, second, centisecond * 10, 0.0));
+    MSAssignPointer(time, SKTimeIntervalFromComponents(0, minute, second, centisecond * 10, 0.0));
     return YES;
 }
 
@@ -173,7 +173,7 @@ static __inline NSString *_SKLyricMonoline(id obj)
         {
             if ([key isEqualToString:SKLyricLengthMetadataKey]) // [length: mm:ss]
             {
-                NSString *scanoff = NSSTR(@"[%@.00]", value);
+                NSString *scanoff = MSSTR(@"[%@.00]", value);
                 NSScanner *_scanner = [NSScanner scannerWithString:scanoff];
                 NSTimeInterval _time = NAN;
                 if ([_scanner _SKLyricsScanTimeTag:&_time])
@@ -196,7 +196,7 @@ static __inline NSString *_SKLyricMonoline(id obj)
                             usingBlock:^(SKSubtitleLine *obj, NSUInteger idx, BOOL *stop) {
                                 SKSubtitleLine *next = (idx < [lines count] - 1) ? lines[idx + 1] : nil;
                                 obj.duration = next ? next.start - obj.start :
-                                              (isnan(length) ? 1.0 : length - obj.start);
+                                              (isnan(length) ? 0.0 : length - obj.start);
                                 *stop = NO;
                             }];
     
@@ -323,7 +323,7 @@ static __inline NSString *_SKLyricMonoline(id obj)
     
     NSUInteger lmin, lsec;
     SKComponentsFromTimeInterval([[[thisTrack lines] lastObject] end], NULL, &lmin, &lsec, NULL);
-    dictionary[SKLyricLengthMetadataKey] = NSSTR(@"%lu:%02lu", lmin, lsec);
+    dictionary[SKLyricLengthMetadataKey] = MSSTR(@"%lu:%02lu", lmin, lsec);
     
     [thisTrack setMetadata:dictionary];
     
@@ -373,14 +373,5 @@ static __inline NSString *_SKLyricMonoline(id obj)
 
 @end
 
-# pragma mark - LRC metadata keys
-
-NSStringConstant(SKLyricTitleMetadataKey, ti);
-NSStringConstant(SKLyricMakerMetadataKey, by);
-NSStringConstant(SKLyricArtistMetadataKey, ar);
-NSStringConstant(SKLyricAlbumMetadataKey, al);
-NSStringConstant(SKLyricWriterMetadataKey, au);
-NSStringConstant(SKLyricOffsetMetadataKey, offset);
-NSStringConstant(SKLyricApplicationMetadataKey, re);
-NSStringConstant(SKLyricApplicationVersionMetadataKey, ve);
-NSStringConstant(SKLyricLengthMetadataKey, length);
+#pragma mark - LRC metadata keys
+#include "SKLyricFormatStrings.h"

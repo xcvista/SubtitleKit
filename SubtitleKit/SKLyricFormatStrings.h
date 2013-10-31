@@ -6,9 +6,14 @@
 //  Copyright (c) 2013 muski. All rights reserved.
 //
 
-#ifndef SubtitleKit_SKLyricFormatStrings_h
-#define SubtitleKit_SKLyricFormatStrings_h
+#import <MSBooster/MSBooster.h>
 
-
-
-#endif
+MSConstantString(SKLyricTitleMetadataKey, ti);
+MSConstantString(SKLyricMakerMetadataKey, by);
+MSConstantString(SKLyricArtistMetadataKey, ar);
+MSConstantString(SKLyricAlbumMetadataKey, al);
+MSConstantString(SKLyricWriterMetadataKey, au);
+MSConstantString(SKLyricOffsetMetadataKey, offset);
+MSConstantString(SKLyricApplicationMetadataKey, re);
+MSConstantString(SKLyricApplicationVersionMetadataKey, ve);
+MSConstantString(SKLyricLengthMetadataKey, length);

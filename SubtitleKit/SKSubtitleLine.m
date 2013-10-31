@@ -10,11 +10,11 @@
 
 #define __REQUIRE_OBJC_SUBSCRIPTING
 #define __REQUIRE_OBJC_ARRAY_LITERALS
-#import "SKCommon_private.h"
+#import <MSBooster/MSBooster_Private.h>
 
-NSStringConstant(_SKSubtitleLineStartKey, start);
-NSStringConstant(_SKSubtitleLineDurationKey, duration);
-NSStringConstant(_SKSubtitleLineContentKey, content);
+MSConstantString(_SKSubtitleLineStartKey, start);
+MSConstantString(_SKSubtitleLineDurationKey, duration);
+MSConstantString(_SKSubtitleLineContentKey, content);
 
 @implementation SKSubtitleLine
 
@@ -63,16 +63,16 @@ NSStringConstant(_SKSubtitleLineContentKey, content);
 
 - (void)setEnd:(NSTimeInterval)end
 {
-    __block BOOL dead = NO;
-    NSSynchronizedModifyWithLock(self,
-                                 self,
-                                 @"duration",
-                                 ^{
-                                     if (end >= _start)
-                                         _duration = end - _start;
-                                     else
-                                         dead = YES;
-                                 });
+    BOOL dead = NO;
+    [self willChangeValueForKey:@"duration"];
+    @synchronized (self)
+    {
+        if (end >= _start)
+            _duration = end - _start;
+        else
+            dead = YES;
+    }
+    [self didChangeValueForKey:@"duration"];
     if (dead)
         [NSException raise:NSInvalidArgumentException
                     format:@"End time earlier than start time: %.2lf > %.2lf", end, _start];
@@ -99,23 +99,23 @@ void SKComponentsFromTimeInterval(NSTimeInterval interval, NSUInteger *hour, NSU
 {
     if (hour)
     {
-        NSAssignPointer(hour, (NSUInteger)(interval / 3600.0));
+        MSAssignPointer(hour, (NSUInteger)(interval / 3600.0));
         interval -= (*hour) * 3600.0;
     }
     
     if (minute)
     {
-        NSAssignPointer(minute, (NSUInteger)(interval / 60.0));
+        MSAssignPointer(minute, (NSUInteger)(interval / 60.0));
         interval -= (*minute) * 60.0;
     }
     
     if (second)
     {
-        NSAssignPointer(second, (NSUInteger)interval);
+        MSAssignPointer(second, (NSUInteger)interval);
         interval -= (*second);
     }
     
-    NSAssignPointer(millisecond, (NSUInteger)(round(interval * 1000.0)));
+    MSAssignPointer(millisecond, (NSUInteger)(round(interval * 1000.0)));
 }
 
 @implementation SKSubtitleTrack (SKOffsetting)

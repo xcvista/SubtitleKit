@@ -12,10 +12,10 @@
 #define __REQUIRE_OBJC_ARC_OR_GC
 #define __REQUIRE_OBJC_SUBSCRIPTING
 #define __REQUIRE_BLOCKS
-#import "SKCommon_private.h"
+#import <MSBooster/MSBooster_Private.h>
 
-NSStringConstant(_SKSubtitleTrackLinesKey, lines);
-NSStringConstant(_SKSubtitleTrackMetadataKey, metadata);
+MSConstantString(_SKSubtitleTrackLinesKey, lines);
+MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
 
 @implementation SKSubtitleTrack
 
@@ -45,12 +45,12 @@ NSStringConstant(_SKSubtitleTrackMetadataKey, metadata);
 {
     if (lines)
     {
-        NSSynchronizedModifyWithLock(self,
-                                     _lines,
-                                     _SKSubtitleTrackLinesKey,
-                                     ^{
-                                         _lines = [NSMutableArray arrayWithArray:lines];
-                                     });
+        [self willChangeValueForKey:_SKSubtitleTrackLinesKey];
+        @synchronized (_lines)
+        {
+            _lines = [NSMutableArray arrayWithArray:lines];
+        }
+        [self didChangeValueForKey:_SKSubtitleTrackLinesKey];
     }
 }
 
@@ -66,12 +66,12 @@ NSStringConstant(_SKSubtitleTrackMetadataKey, metadata);
 {
     if (metadata)
     {
-        NSSynchronizedModifyWithLock(self,
-                                     _metadata,
-                                     _SKSubtitleTrackMetadataKey,
-                                     ^{
-                                         _metadata = [NSMutableDictionary dictionaryWithDictionary:metadata];
-                                     });
+        [self willChangeValueForKey:_SKSubtitleTrackMetadataKey];
+        @synchronized (_metadata)
+        {
+            _metadata = [NSMutableDictionary dictionaryWithDictionary:metadata];
+        }
+        [self didChangeValueForKey:_SKSubtitleTrackMetadataKey];
     }
 }
 
@@ -146,32 +146,32 @@ NSStringConstant(_SKSubtitleTrackMetadataKey, metadata);
 
 - (void)setLine:(SKSubtitleLine *)line atIndex:(NSUInteger)index
 {
-    NSSynchronizedModifyWithLock(self,
-                                 _lines,
-                                 _SKSubtitleTrackLinesKey,
-                                 ^{
-                                     _lines[index] = line;
-                                 });
+    [self willChangeValueForKey:_SKSubtitleTrackLinesKey];
+    @synchronized (_lines)
+    {
+         _lines[index] = line;
+    }
+    [self didChangeValueForKey:_SKSubtitleTrackLinesKey];
 }
 
 - (void)addLine:(SKSubtitleLine *)line
 {
-    NSSynchronizedModifyWithLock(self,
-                                 _lines,
-                                 _SKSubtitleTrackLinesKey,
-                                 ^{
-                                     [_lines addObject:line];
-                                 });
+    [self willChangeValueForKey:_SKSubtitleTrackLinesKey];
+    @synchronized (_lines)
+    {
+        [_lines addObject:line];
+    }
+    [self didChangeValueForKey:_SKSubtitleTrackLinesKey];
 }
 
 - (void)removeLineAtIndex:(NSUInteger)index
 {
-    NSSynchronizedModifyWithLock(self,
-                                 _lines,
-                                 _SKSubtitleTrackLinesKey,
-                                 ^{
-                                     [_lines removeObjectAtIndex:index];
-                                 });
+    [self willChangeValueForKey:_SKSubtitleTrackLinesKey];
+    @synchronized (_lines)
+    {
+        [_lines removeObjectAtIndex:index];
+    }
+    [self didChangeValueForKey:_SKSubtitleTrackLinesKey];
 }
 
 - (void)setObject:(SKSubtitleLine *)object atIndexedSubscript:(NSUInteger)index
@@ -186,12 +186,12 @@ NSStringConstant(_SKSubtitleTrackMetadataKey, metadata);
 
 - (void)sortLines
 {
-    NSSynchronizedModifyWithLock(self,
-                                 _lines,
-                                 _SKSubtitleTrackLinesKey,
-                                 ^{
-                                     [_lines sortUsingSelector:@selector(compare:)];
-                                 });
+    [self willChangeValueForKey:_SKSubtitleTrackLinesKey];
+    @synchronized (_lines)
+    {
+        [_lines sortUsingSelector:@selector(compare:)];
+    }
+    [self didChangeValueForKey:_SKSubtitleTrackLinesKey];
 }
 
 - (NSUInteger)lineCount
@@ -214,25 +214,25 @@ NSStringConstant(_SKSubtitleTrackMetadataKey, metadata);
 
 - (void)setMetadata:(id)metadata forKey:(NSString *)key
 {
-    NSSynchronizedModifyWithLock(self,
-                                 _metadata,
-                                 _SKSubtitleTrackMetadataKey,
-                                 ^{
-                                     if (metadata)
-                                         _metadata[key] = metadata;
-                                     else
-                                         [_metadata removeObjectForKey:key];
-                                 });
+    [self willChangeValueForKey:_SKSubtitleTrackMetadataKey];
+    @synchronized (_metadata)
+    {
+        if (metadata)
+            _metadata[key] = metadata;
+        else
+            [_metadata removeObjectForKey:key];
+    }
+    [self didChangeValueForKey:_SKSubtitleTrackMetadataKey];
 }
 
 - (void)removeMetadataForKey:(NSString *)key
 {
-    NSSynchronizedModifyWithLock(self,
-                                 _metadata,
-                                 _SKSubtitleTrackMetadataKey,
-                                 ^{
-                                     [_metadata removeObjectForKey:key];
-                                 });
+    [self willChangeValueForKey:_SKSubtitleTrackMetadataKey];
+    @synchronized (_metadata)
+    {
+        [_metadata removeObjectForKey:key];
+    }
+    [self didChangeValueForKey:_SKSubtitleTrackMetadataKey];
 }
 
 - (void)setObject:(id)object forKeyedSubscript:(NSString *)key
@@ -254,13 +254,4 @@ NSStringConstant(_SKSubtitleTrackMetadataKey, metadata);
 
 #pragma mark - Constants
 
-NSStringConstant(SKTitleMetadataKey, Title);
-NSStringConstant(SKArtistMetadataKey, Artist);
-NSStringConstant(SKAlbumMetadataKey, Album);
-NSStringConstant(SKWriterMetadataKey, Writer);
-NSStringConstant(SKComposerMetadataKey, Composer);
-NSStringConstant(SKProducerMetadataKey, Producer);
-NSStringConstant(SKCopyrightMetadataKey, Copyright);
-NSStringConstant(SKMakerMetadataKey, Maker);
-NSStringConstant(SKApplicationMetadataKey, Application);
-NSStringConstant(SKApplicationVersionMetadataKey, Version);
+#include "SKSubtitleTrackStrings.h"

@@ -7,25 +7,103 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D222067182236ED00A3113A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D222066182236ED00A3113A /* Cocoa.framework */; };
 		1D222071182236ED00A3113A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D22206F182236ED00A3113A /* InfoPlist.strings */; };
-		1D222075182236ED00A3113A /* SubtitleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D222074182236ED00A3113A /* SubtitleKit.m */; };
-		1D22207C182236ED00A3113A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D22207B182236ED00A3113A /* XCTest.framework */; };
-		1D22207D182236ED00A3113A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D222066182236ED00A3113A /* Cocoa.framework */; };
-		1D222080182236ED00A3113A /* SubtitleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D222063182236ED00A3113A /* SubtitleKit.framework */; };
-		1D222086182236ED00A3113A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D222084182236ED00A3113A /* InfoPlist.strings */; };
-		1D222088182236ED00A3113A /* SubtitleKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D222087182236ED00A3113A /* SubtitleKitTests.m */; };
+		1D2220B01822394B00A3113A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2220AF1822394B00A3113A /* SenTestingKit.framework */; };
+		1D2220B61822394B00A3113A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D2220B41822394B00A3113A /* InfoPlist.strings */; };
+		1D2220CF182239B200A3113A /* MSBooster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2220C81822397F00A3113A /* MSBooster.framework */; };
+		1D2220D1182239DC00A3113A /* MSBooster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D2220C81822397F00A3113A /* MSBooster.framework */; };
+		1D2220D318223A2E00A3113A /* module.map in Resources */ = {isa = PBXBuildFile; fileRef = 1D2220D218223A2E00A3113A /* module.map */; };
+		1D2220FE18223A7C00A3113A /* SKLyricFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F018223A7C00A3113A /* SKLyricFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2220FF18223A7C00A3113A /* SKLyricFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F118223A7C00A3113A /* SKLyricFormat.m */; };
+		1D22210018223A7C00A3113A /* SKPropertyListFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F218223A7C00A3113A /* SKPropertyListFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D22210118223A7C00A3113A /* SKPropertyListFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F318223A7C00A3113A /* SKPropertyListFormat.m */; };
+		1D22210218223A7C00A3113A /* SKSubripFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F418223A7C00A3113A /* SKSubripFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D22210318223A7C00A3113A /* SKSubripFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F518223A7C00A3113A /* SKSubripFormat.m */; };
+		1D22210418223A7C00A3113A /* SKSubtitleFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F618223A7C00A3113A /* SKSubtitleFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D22210518223A7C00A3113A /* SKSubtitleFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F718223A7C00A3113A /* SKSubtitleFormat.m */; };
+		1D22210618223A7C00A3113A /* SKSubtitleLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F818223A7C00A3113A /* SKSubtitleLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D22210718223A7C00A3113A /* SKSubtitleLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F918223A7C00A3113A /* SKSubtitleLine.m */; };
+		1D22210818223A7C00A3113A /* SKSubtitleTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220FA18223A7C00A3113A /* SKSubtitleTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D22210918223A7C00A3113A /* SKSubtitleTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220FB18223A7C00A3113A /* SKSubtitleTrack.m */; };
+		1D22210A18223A7C00A3113A /* SKTextSubtitleFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220FC18223A7C00A3113A /* SKTextSubtitleFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D22210B18223A7C00A3113A /* SKTextSubtitleFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220FD18223A7C00A3113A /* SKTextSubtitleFormat.m */; };
+		1D22210D18223B0300A3113A /* SKLyricFormatStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D22210C18223B0300A3113A /* SKLyricFormatStrings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D22210F18223BBA00A3113A /* SKSubtitleTrackStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D22210E18223BBA00A3113A /* SKSubtitleTrackStrings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2221121822420200A3113A /* SubtitleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D222063182236ED00A3113A /* SubtitleKit.framework */; };
+		1D2221141822421F00A3113A /* SubtitleKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D222063182236ED00A3113A /* SubtitleKit.framework */; };
+		1D222116182242CD00A3113A /* SKLyricParsingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D222115182242CD00A3113A /* SKLyricParsingTest.m */; };
+		1D222118182242E400A3113A /* Test.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 1D222117182242E400A3113A /* Test.lrc */; };
+		1D2221191822438400A3113A /* SubtitleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D222073182236ED00A3113A /* SubtitleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D22211B1822445100A3113A /* TestOffset.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 1D22211A1822445100A3113A /* TestOffset.lrc */; };
+		1D22211D182244C200A3113A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D222066182236ED00A3113A /* Cocoa.framework */; };
+		1D22211E182247DA00A3113A /* MSBooster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2220C81822397F00A3113A /* MSBooster.framework */; };
+		1D22211F182247E700A3113A /* MSBooster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D2220C81822397F00A3113A /* MSBooster.framework */; };
+		1D222122182248B600A3113A /* SKSubtitleParsingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D222121182248B600A3113A /* SKSubtitleParsingTest.m */; };
+		1D2221241822491900A3113A /* Test.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1D2221231822491900A3113A /* Test.srt */; };
+		1D2221261822588500A3113A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1D2221251822588500A3113A /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1D22207E182236ED00A3113A /* PBXContainerItemProxy */ = {
+		1D2220BA1822394B00A3113A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1D22205A182236ED00A3113A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1D222062182236ED00A3113A;
 			remoteInfo = SubtitleKit;
 		};
+		1D2220C71822397F00A3113A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D2220C01822397F00A3113A /* MSBooster.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D4BF07D17A8FF30005080A2;
+			remoteInfo = MSBooster;
+		};
+		1D2220C91822397F00A3113A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D2220C01822397F00A3113A /* MSBooster.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D5CBA1B17BD4900009D58E2;
+			remoteInfo = MobileBooster;
+		};
+		1D2220CB1822397F00A3113A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D2220C01822397F00A3113A /* MSBooster.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D03B5EA17EA1C060067D035;
+			remoteInfo = "MSBooster Tests";
+		};
+		1D2220CD1822397F00A3113A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D2220C01822397F00A3113A /* MSBooster.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D278D1817EB081B00FBDA36;
+			remoteInfo = "MSBooster Profiling";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1D2220D0182239C100A3113A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1D2220D1182239DC00A3113A /* MSBooster.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D2221131822421100A3113A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1D22211F182247E700A3113A /* MSBooster.framework in CopyFiles */,
+				1D2221141822421F00A3113A /* SubtitleKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D222063182236ED00A3113A /* SubtitleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SubtitleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,14 +113,35 @@
 		1D22206B182236ED00A3113A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		1D22206E182236ED00A3113A /* SubtitleKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SubtitleKit-Info.plist"; sourceTree = "<group>"; };
 		1D222070182236ED00A3113A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1D222072182236ED00A3113A /* SubtitleKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SubtitleKit-Prefix.pch"; sourceTree = "<group>"; };
 		1D222073182236ED00A3113A /* SubtitleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubtitleKit.h; sourceTree = "<group>"; };
-		1D222074182236ED00A3113A /* SubtitleKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubtitleKit.m; sourceTree = "<group>"; };
-		1D22207A182236ED00A3113A /* SubtitleKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubtitleKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D22207B182236ED00A3113A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		1D222083182236ED00A3113A /* SubtitleKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SubtitleKitTests-Info.plist"; sourceTree = "<group>"; };
-		1D222085182236ED00A3113A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1D222087182236ED00A3113A /* SubtitleKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubtitleKitTests.m; sourceTree = "<group>"; };
+		1D2220AE1822394B00A3113A /* SubtitleKit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SubtitleKit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D2220AF1822394B00A3113A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1D2220B31822394B00A3113A /* SubtitleKit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SubtitleKit Tests-Info.plist"; sourceTree = "<group>"; };
+		1D2220B51822394B00A3113A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1D2220C01822397F00A3113A /* MSBooster.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MSBooster.xcodeproj; path = MSBooster/MSBooster.xcodeproj; sourceTree = "<group>"; };
+		1D2220D218223A2E00A3113A /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = module.map; sourceTree = "<group>"; };
+		1D2220F018223A7C00A3113A /* SKLyricFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKLyricFormat.h; sourceTree = "<group>"; };
+		1D2220F118223A7C00A3113A /* SKLyricFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKLyricFormat.m; sourceTree = "<group>"; };
+		1D2220F218223A7C00A3113A /* SKPropertyListFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPropertyListFormat.h; sourceTree = "<group>"; };
+		1D2220F318223A7C00A3113A /* SKPropertyListFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPropertyListFormat.m; sourceTree = "<group>"; };
+		1D2220F418223A7C00A3113A /* SKSubripFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubripFormat.h; sourceTree = "<group>"; };
+		1D2220F518223A7C00A3113A /* SKSubripFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubripFormat.m; sourceTree = "<group>"; };
+		1D2220F618223A7C00A3113A /* SKSubtitleFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubtitleFormat.h; sourceTree = "<group>"; };
+		1D2220F718223A7C00A3113A /* SKSubtitleFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubtitleFormat.m; sourceTree = "<group>"; };
+		1D2220F818223A7C00A3113A /* SKSubtitleLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubtitleLine.h; sourceTree = "<group>"; };
+		1D2220F918223A7C00A3113A /* SKSubtitleLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubtitleLine.m; sourceTree = "<group>"; };
+		1D2220FA18223A7C00A3113A /* SKSubtitleTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubtitleTrack.h; sourceTree = "<group>"; };
+		1D2220FB18223A7C00A3113A /* SKSubtitleTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubtitleTrack.m; sourceTree = "<group>"; };
+		1D2220FC18223A7C00A3113A /* SKTextSubtitleFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTextSubtitleFormat.h; sourceTree = "<group>"; };
+		1D2220FD18223A7C00A3113A /* SKTextSubtitleFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTextSubtitleFormat.m; sourceTree = "<group>"; };
+		1D22210C18223B0300A3113A /* SKLyricFormatStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKLyricFormatStrings.h; sourceTree = "<group>"; };
+		1D22210E18223BBA00A3113A /* SKSubtitleTrackStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubtitleTrackStrings.h; sourceTree = "<group>"; };
+		1D222115182242CD00A3113A /* SKLyricParsingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKLyricParsingTest.m; sourceTree = "<group>"; };
+		1D222117182242E400A3113A /* Test.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.lrc; sourceTree = "<group>"; };
+		1D22211A1822445100A3113A /* TestOffset.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestOffset.lrc; sourceTree = "<group>"; };
+		1D222121182248B600A3113A /* SKSubtitleParsingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubtitleParsingTest.m; sourceTree = "<group>"; };
+		1D2221231822491900A3113A /* Test.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.srt; sourceTree = "<group>"; };
+		1D2221251822588500A3113A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,17 +149,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D222067182236ED00A3113A /* Cocoa.framework in Frameworks */,
+				1D22211D182244C200A3113A /* Cocoa.framework in Frameworks */,
+				1D2220CF182239B200A3113A /* MSBooster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1D222077182236ED00A3113A /* Frameworks */ = {
+		1D2220AB1822394B00A3113A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D22207D182236ED00A3113A /* Cocoa.framework in Frameworks */,
-				1D22207C182236ED00A3113A /* XCTest.framework in Frameworks */,
-				1D222080182236ED00A3113A /* SubtitleKit.framework in Frameworks */,
+				1D22211E182247DA00A3113A /* MSBooster.framework in Frameworks */,
+				1D2221121822420200A3113A /* SubtitleKit.framework in Frameworks */,
+				1D2220B01822394B00A3113A /* SenTestingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +170,9 @@
 		1D222059182236ED00A3113A = {
 			isa = PBXGroup;
 			children = (
+				1D2221251822588500A3113A /* .gitignore */,
 				1D22206C182236ED00A3113A /* SubtitleKit */,
-				1D222081182236ED00A3113A /* SubtitleKitTests */,
+				1D2220B11822394B00A3113A /* SubtitleKit Tests */,
 				1D222065182236ED00A3113A /* Frameworks */,
 				1D222064182236ED00A3113A /* Products */,
 			);
@@ -81,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				1D222063182236ED00A3113A /* SubtitleKit.framework */,
-				1D22207A182236ED00A3113A /* SubtitleKitTests.xctest */,
+				1D2220AE1822394B00A3113A /* SubtitleKit Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,11 +190,10 @@
 		1D222065182236ED00A3113A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D222066182236ED00A3113A /* Cocoa.framework */,
-				1D22207B182236ED00A3113A /* XCTest.framework */,
-				1D222068182236ED00A3113A /* Other Frameworks */,
+				1D2220C01822397F00A3113A /* MSBooster.xcodeproj */,
+				1D2220BF1822395E00A3113A /* System Frameworks */,
 			);
-			name = Frameworks;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		1D222068182236ED00A3113A /* Other Frameworks */ = {
@@ -110,7 +210,22 @@
 			isa = PBXGroup;
 			children = (
 				1D222073182236ED00A3113A /* SubtitleKit.h */,
-				1D222074182236ED00A3113A /* SubtitleKit.m */,
+				1D2220F018223A7C00A3113A /* SKLyricFormat.h */,
+				1D22210C18223B0300A3113A /* SKLyricFormatStrings.h */,
+				1D2220F118223A7C00A3113A /* SKLyricFormat.m */,
+				1D2220F218223A7C00A3113A /* SKPropertyListFormat.h */,
+				1D2220F318223A7C00A3113A /* SKPropertyListFormat.m */,
+				1D2220F418223A7C00A3113A /* SKSubripFormat.h */,
+				1D2220F518223A7C00A3113A /* SKSubripFormat.m */,
+				1D2220F618223A7C00A3113A /* SKSubtitleFormat.h */,
+				1D2220F718223A7C00A3113A /* SKSubtitleFormat.m */,
+				1D2220F818223A7C00A3113A /* SKSubtitleLine.h */,
+				1D2220F918223A7C00A3113A /* SKSubtitleLine.m */,
+				1D2220FA18223A7C00A3113A /* SKSubtitleTrack.h */,
+				1D22210E18223BBA00A3113A /* SKSubtitleTrackStrings.h */,
+				1D2220FB18223A7C00A3113A /* SKSubtitleTrack.m */,
+				1D2220FC18223A7C00A3113A /* SKTextSubtitleFormat.h */,
+				1D2220FD18223A7C00A3113A /* SKTextSubtitleFormat.m */,
 				1D22206D182236ED00A3113A /* Supporting Files */,
 			);
 			path = SubtitleKit;
@@ -121,27 +236,52 @@
 			children = (
 				1D22206E182236ED00A3113A /* SubtitleKit-Info.plist */,
 				1D22206F182236ED00A3113A /* InfoPlist.strings */,
-				1D222072182236ED00A3113A /* SubtitleKit-Prefix.pch */,
+				1D2220D218223A2E00A3113A /* module.map */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1D222081182236ED00A3113A /* SubtitleKitTests */ = {
+		1D2220B11822394B00A3113A /* SubtitleKit Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1D222087182236ED00A3113A /* SubtitleKitTests.m */,
-				1D222082182236ED00A3113A /* Supporting Files */,
+				1D222115182242CD00A3113A /* SKLyricParsingTest.m */,
+				1D222117182242E400A3113A /* Test.lrc */,
+				1D22211A1822445100A3113A /* TestOffset.lrc */,
+				1D222121182248B600A3113A /* SKSubtitleParsingTest.m */,
+				1D2221231822491900A3113A /* Test.srt */,
+				1D2220B21822394B00A3113A /* Supporting Files */,
 			);
-			path = SubtitleKitTests;
+			path = "SubtitleKit Tests";
 			sourceTree = "<group>";
 		};
-		1D222082182236ED00A3113A /* Supporting Files */ = {
+		1D2220B21822394B00A3113A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1D222083182236ED00A3113A /* SubtitleKitTests-Info.plist */,
-				1D222084182236ED00A3113A /* InfoPlist.strings */,
+				1D2220B31822394B00A3113A /* SubtitleKit Tests-Info.plist */,
+				1D2220B41822394B00A3113A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D2220BF1822395E00A3113A /* System Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D222066182236ED00A3113A /* Cocoa.framework */,
+				1D2220AF1822394B00A3113A /* SenTestingKit.framework */,
+				1D222068182236ED00A3113A /* Other Frameworks */,
+			);
+			name = "System Frameworks";
+			sourceTree = "<group>";
+		};
+		1D2220C11822397F00A3113A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D2220C81822397F00A3113A /* MSBooster.framework */,
+				1D2220CA1822397F00A3113A /* MSBooster.framework */,
+				1D2220CC1822397F00A3113A /* MSBooster Tests.octest */,
+				1D2220CE1822397F00A3113A /* MSBooster Profiling */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +291,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D22210D18223B0300A3113A /* SKLyricFormatStrings.h in Headers */,
+				1D22210818223A7C00A3113A /* SKSubtitleTrack.h in Headers */,
+				1D22210018223A7C00A3113A /* SKPropertyListFormat.h in Headers */,
+				1D22210218223A7C00A3113A /* SKSubripFormat.h in Headers */,
+				1D22210618223A7C00A3113A /* SKSubtitleLine.h in Headers */,
+				1D2220FE18223A7C00A3113A /* SKLyricFormat.h in Headers */,
+				1D22210A18223A7C00A3113A /* SKTextSubtitleFormat.h in Headers */,
+				1D2221191822438400A3113A /* SubtitleKit.h in Headers */,
+				1D22210418223A7C00A3113A /* SKSubtitleFormat.h in Headers */,
+				1D22210F18223BBA00A3113A /* SKSubtitleTrackStrings.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +315,7 @@
 				1D22205F182236ED00A3113A /* Frameworks */,
 				1D222060182236ED00A3113A /* Headers */,
 				1D222061182236ED00A3113A /* Resources */,
+				1D2220D0182239C100A3113A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -175,23 +326,24 @@
 			productReference = 1D222063182236ED00A3113A /* SubtitleKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		1D222079182236ED00A3113A /* SubtitleKitTests */ = {
+		1D2220AD1822394B00A3113A /* SubtitleKit Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D22208E182236ED00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKitTests" */;
+			buildConfigurationList = 1D2220BC1822394B00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKit Tests" */;
 			buildPhases = (
-				1D222076182236ED00A3113A /* Sources */,
-				1D222077182236ED00A3113A /* Frameworks */,
-				1D222078182236ED00A3113A /* Resources */,
+				1D2220AA1822394B00A3113A /* Sources */,
+				1D2220AB1822394B00A3113A /* Frameworks */,
+				1D2220AC1822394B00A3113A /* Resources */,
+				1D2221131822421100A3113A /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1D22207F182236ED00A3113A /* PBXTargetDependency */,
+				1D2220BB1822394B00A3113A /* PBXTargetDependency */,
 			);
-			name = SubtitleKitTests;
-			productName = SubtitleKitTests;
-			productReference = 1D22207A182236ED00A3113A /* SubtitleKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = "SubtitleKit Tests";
+			productName = "SubtitleKit Tests";
+			productReference = 1D2220AE1822394B00A3113A /* SubtitleKit Tests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -199,10 +351,11 @@
 		1D22205A182236ED00A3113A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SK;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = muski;
 				TargetAttributes = {
-					1D222079182236ED00A3113A = {
+					1D2220AD1822394B00A3113A = {
 						TestTargetID = 1D222062182236ED00A3113A;
 					};
 				};
@@ -217,28 +370,70 @@
 			mainGroup = 1D222059182236ED00A3113A;
 			productRefGroup = 1D222064182236ED00A3113A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1D2220C11822397F00A3113A /* Products */;
+					ProjectRef = 1D2220C01822397F00A3113A /* MSBooster.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D222062182236ED00A3113A /* SubtitleKit */,
-				1D222079182236ED00A3113A /* SubtitleKitTests */,
+				1D2220AD1822394B00A3113A /* SubtitleKit Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1D2220C81822397F00A3113A /* MSBooster.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MSBooster.framework;
+			remoteRef = 1D2220C71822397F00A3113A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D2220CA1822397F00A3113A /* MSBooster.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = MSBooster.framework;
+			remoteRef = 1D2220C91822397F00A3113A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D2220CC1822397F00A3113A /* MSBooster Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MSBooster Tests.octest";
+			remoteRef = 1D2220CB1822397F00A3113A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D2220CE1822397F00A3113A /* MSBooster Profiling */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "MSBooster Profiling";
+			remoteRef = 1D2220CD1822397F00A3113A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D222061182236ED00A3113A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2220D318223A2E00A3113A /* module.map in Resources */,
 				1D222071182236ED00A3113A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1D222078182236ED00A3113A /* Resources */ = {
+		1D2220AC1822394B00A3113A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D222086182236ED00A3113A /* InfoPlist.strings in Resources */,
+				1D2221261822588500A3113A /* .gitignore in Resources */,
+				1D2220B61822394B00A3113A /* InfoPlist.strings in Resources */,
+				1D222118182242E400A3113A /* Test.lrc in Resources */,
+				1D22211B1822445100A3113A /* TestOffset.lrc in Resources */,
+				1D2221241822491900A3113A /* Test.srt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,25 +444,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D222075182236ED00A3113A /* SubtitleKit.m in Sources */,
+				1D22210518223A7C00A3113A /* SKSubtitleFormat.m in Sources */,
+				1D2220FF18223A7C00A3113A /* SKLyricFormat.m in Sources */,
+				1D22210718223A7C00A3113A /* SKSubtitleLine.m in Sources */,
+				1D22210918223A7C00A3113A /* SKSubtitleTrack.m in Sources */,
+				1D22210118223A7C00A3113A /* SKPropertyListFormat.m in Sources */,
+				1D22210318223A7C00A3113A /* SKSubripFormat.m in Sources */,
+				1D22210B18223A7C00A3113A /* SKTextSubtitleFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1D222076182236ED00A3113A /* Sources */ = {
+		1D2220AA1822394B00A3113A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D222088182236ED00A3113A /* SubtitleKitTests.m in Sources */,
+				1D222122182248B600A3113A /* SKSubtitleParsingTest.m in Sources */,
+				1D222116182242CD00A3113A /* SKLyricParsingTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1D22207F182236ED00A3113A /* PBXTargetDependency */ = {
+		1D2220BB1822394B00A3113A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1D222062182236ED00A3113A /* SubtitleKit */;
-			targetProxy = 1D22207E182236ED00A3113A /* PBXContainerItemProxy */;
+			targetProxy = 1D2220BA1822394B00A3113A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -280,10 +482,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1D222084182236ED00A3113A /* InfoPlist.strings */ = {
+		1D2220B41822394B00A3113A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1D222085182236ED00A3113A /* en */,
+				1D2220B51822394B00A3113A /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -362,13 +564,13 @@
 		1D22208C182236ED00A3113A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SubtitleKit/SubtitleKit-Prefix.pch";
 				INFOPLIST_FILE = "SubtitleKit/SubtitleKit-Info.plist";
+				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -377,55 +579,45 @@
 		1D22208D182236ED00A3113A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SubtitleKit/SubtitleKit-Prefix.pch";
 				INFOPLIST_FILE = "SubtitleKit/SubtitleKit-Info.plist";
+				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
-		1D22208F182236ED00A3113A /* Debug */ = {
+		1D2220BD1822394B00A3113A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SubtitleKit.framework/Versions/A/SubtitleKit";
-				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SubtitleKit/SubtitleKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "SubtitleKitTests/SubtitleKitTests-Info.plist";
+				INFOPLIST_FILE = "SubtitleKit Tests/SubtitleKit Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		1D222090182236ED00A3113A /* Release */ = {
+		1D2220BE1822394B00A3113A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SubtitleKit.framework/Versions/A/SubtitleKit";
-				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SubtitleKit/SubtitleKit-Prefix.pch";
-				INFOPLIST_FILE = "SubtitleKitTests/SubtitleKitTests-Info.plist";
+				INFOPLIST_FILE = "SubtitleKit Tests/SubtitleKit Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -449,11 +641,11 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		1D22208E182236ED00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKitTests" */ = {
+		1D2220BC1822394B00A3113A /* Build configuration list for PBXNativeTarget "SubtitleKit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D22208F182236ED00A3113A /* Debug */,
-				1D222090182236ED00A3113A /* Release */,
+				1D2220BD1822394B00A3113A /* Debug */,
+				1D2220BE1822394B00A3113A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

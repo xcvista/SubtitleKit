@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 muski. All rights reserved.
 //
 
-#import <SubtitleKit/SKCommon.h>
+#import <MSBooster/MSBooster.h>
 #import <SubtitleKit/SKSubtitleTrack.h>
 
 __BEGIN_DECLS
