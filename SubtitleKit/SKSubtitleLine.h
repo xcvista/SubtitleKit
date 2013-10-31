@@ -27,7 +27,9 @@ extern void SKComponentsFromTimeInterval(NSTimeInterval interval, NSUInteger *ho
 
 - (NSTimeInterval)end;
 - (void)setEnd:(NSTimeInterval)end;
-- (NSComparisonResult)compare:(SKSubtitleLine *)other;
+- (NSComparisonResult)timeCompare:(SKSubtitleLine *)other;
+
+- (BOOL)isEqualToLine:(SKSubtitleLine *)line;
 
 @end
 

@@ -26,6 +26,8 @@ __class SKSubtitleLine;
 @property NSArray *lines;
 @property NSDictionary *metadata;
 
+- (BOOL)isEqualToTrack:(SKSubtitleTrack *)track;
+
 @end
 
 @interface SKSubtitleTrack (NSCopying) <NSCopying>

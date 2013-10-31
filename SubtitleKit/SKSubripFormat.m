@@ -67,7 +67,7 @@
 
 @end
 
-static __inline NSString *_SKStringFromTimetag(NSTimeInterval tag)
+static MSInline NSString *_SKStringFromTimetag(NSTimeInterval tag)
 {
     NSUInteger hour, minute, second, millisecond;
     SKComponentsFromTimeInterval(tag, &hour, &minute, &second, &millisecond);
@@ -107,7 +107,10 @@ static __inline NSString *_SKStringFromTimetag(NSTimeInterval tag)
     
     NSScanner *scanner = [NSScanner scannerWithString:string];
     [scanner setCharactersToBeSkipped:nil];
-    NSTimeInterval start, end;
+    NSTimeInterval start = NAN, end = NAN;
+    
+    if (![[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length])
+        return [[SKSubtitleTrack alloc] init];
     
     // Search for the first time tag
     
@@ -117,6 +120,8 @@ static __inline NSString *_SKStringFromTimetag(NSTimeInterval tag)
     {
         [scanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet]
                                 intoString:NULL];
+        if ([scanner isAtEnd])
+            return [[SKSubtitleTrack alloc] init];
     }
     
     // Scan up the document;

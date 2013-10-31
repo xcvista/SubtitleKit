@@ -42,4 +42,52 @@
     }
 }
 
+- (void)testOverlappingSubtitleParsing
+{
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKSubripFormat trackFromContentsOfURL:[thisBundle URLForResource:@"TestOverlapping" withExtension:@"srt"]];
+    STAssertNotNil(track, nil);
+    
+    // Timetags
+    for (SKSubtitleLine *line in track.lines)
+    {
+        STAssertEqualObjects(MSSTR(@"%.1lf-%.1lf", line.start, line.duration), line.content, nil);
+    }
+}
+
+- (void)testSkippingSubtitleParsing
+{
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKSubripFormat trackFromContentsOfURL:[thisBundle URLForResource:@"TestSkipping" withExtension:@"srt"]];
+    STAssertNotNil(track, nil);
+    
+    // Timetags
+    for (SKSubtitleLine *line in track.lines)
+    {
+        STAssertEqualObjects(MSSTR(@"%.1lf-%.1lf", line.start, line.duration), line.content, nil);
+    }
+}
+
+- (void)testEmptyFile
+{
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKSubripFormat trackFromContentsOfURL:[thisBundle URLForResource:@"Empty" withExtension:@"txt"]];
+    STAssertEqualObjects(track, [[SKSubtitleTrack alloc] init], nil);
+}
+
+- (void)testOneReturnFile
+{
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKSubripFormat trackFromContentsOfURL:[thisBundle URLForResource:@"Oneline" withExtension:@"txt"]];
+    STAssertEqualObjects(track, [[SKSubtitleTrack alloc] init], nil);
+}
+
 @end

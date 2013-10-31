@@ -78,7 +78,7 @@ MSConstantString(_SKSubtitleLineContentKey, content);
                     format:@"End time earlier than start time: %.2lf > %.2lf", end, _start];
 }
 
-- (NSComparisonResult)compare:(SKSubtitleLine *)other
+- (NSComparisonResult)timeCompare:(SKSubtitleLine *)other
 {
     if (self.start < other.start)
         return NSOrderedAscending;
@@ -91,6 +91,24 @@ MSConstantString(_SKSubtitleLineContentKey, content);
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%.2lf + %.2lf: %@", self.start, self.duration, self.content];
+}
+
+- (BOOL)isEqualToLine:(SKSubtitleLine *)line
+{
+    return (self.start == line.start) && (self.duration == line.duration) && [self.content isEqual:line.content];
+}
+
+- (NSUInteger)hash
+{
+    return [@(self.start) hash] ^ [@(self.duration) hash] ^ [self.content hash];
+}
+
+- (BOOL)isEqual:(id)object
+{
+    if ([object isKindOfClass:[self class]])
+        return [self isEqualToLine:object];
+    else
+        return NO;
 }
 
 @end

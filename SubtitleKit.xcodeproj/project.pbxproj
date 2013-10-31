@@ -41,6 +41,10 @@
 		1D222122182248B600A3113A /* SKSubtitleParsingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D222121182248B600A3113A /* SKSubtitleParsingTest.m */; };
 		1D2221241822491900A3113A /* Test.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1D2221231822491900A3113A /* Test.srt */; };
 		1D2221261822588500A3113A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1D2221251822588500A3113A /* .gitignore */; };
+		1D4EACE418226AEF007A77BE /* TestOverlapping.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1D4EACE318226AEF007A77BE /* TestOverlapping.srt */; };
+		1D4EACE618226B3E007A77BE /* TestSkipping.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1D4EACE518226B3E007A77BE /* TestSkipping.srt */; };
+		1D4EACE818226D0D007A77BE /* Empty.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D4EACE718226D0D007A77BE /* Empty.txt */; };
+		1D4EACEA18226D18007A77BE /* Oneline.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D4EACE918226D18007A77BE /* Oneline.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +146,10 @@
 		1D222121182248B600A3113A /* SKSubtitleParsingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubtitleParsingTest.m; sourceTree = "<group>"; };
 		1D2221231822491900A3113A /* Test.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Test.srt; sourceTree = "<group>"; };
 		1D2221251822588500A3113A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1D4EACE318226AEF007A77BE /* TestOverlapping.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestOverlapping.srt; sourceTree = "<group>"; };
+		1D4EACE518226B3E007A77BE /* TestSkipping.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSkipping.srt; sourceTree = "<group>"; };
+		1D4EACE718226D0D007A77BE /* Empty.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Empty.txt; sourceTree = "<group>"; };
+		1D4EACE918226D18007A77BE /* Oneline.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Oneline.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,11 +252,15 @@
 		1D2220B11822394B00A3113A /* SubtitleKit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				1D4EACE718226D0D007A77BE /* Empty.txt */,
+				1D4EACE918226D18007A77BE /* Oneline.txt */,
 				1D222115182242CD00A3113A /* SKLyricParsingTest.m */,
 				1D222117182242E400A3113A /* Test.lrc */,
 				1D22211A1822445100A3113A /* TestOffset.lrc */,
 				1D222121182248B600A3113A /* SKSubtitleParsingTest.m */,
 				1D2221231822491900A3113A /* Test.srt */,
+				1D4EACE318226AEF007A77BE /* TestOverlapping.srt */,
+				1D4EACE518226B3E007A77BE /* TestSkipping.srt */,
 				1D2220B21822394B00A3113A /* Supporting Files */,
 			);
 			path = "SubtitleKit Tests";
@@ -431,9 +443,13 @@
 			files = (
 				1D2221261822588500A3113A /* .gitignore in Resources */,
 				1D2220B61822394B00A3113A /* InfoPlist.strings in Resources */,
+				1D4EACE618226B3E007A77BE /* TestSkipping.srt in Resources */,
 				1D222118182242E400A3113A /* Test.lrc in Resources */,
+				1D4EACEA18226D18007A77BE /* Oneline.txt in Resources */,
 				1D22211B1822445100A3113A /* TestOffset.lrc in Resources */,
 				1D2221241822491900A3113A /* Test.srt in Resources */,
+				1D4EACE818226D0D007A77BE /* Empty.txt in Resources */,
+				1D4EACE418226AEF007A77BE /* TestOverlapping.srt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

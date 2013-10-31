@@ -69,4 +69,22 @@
     }
 }
 
+- (void)testEmptyFile
+{
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKLyricFormat trackFromContentsOfURL:[thisBundle URLForResource:@"Empty" withExtension:@"txt"]];
+    STAssertEqualObjects(track, [[SKSubtitleTrack alloc] init], nil);
+}
+
+- (void)testOneReturnFile
+{
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKLyricFormat trackFromContentsOfURL:[thisBundle URLForResource:@"Oneline" withExtension:@"txt"]];
+    STAssertEqualObjects(track, [[SKSubtitleTrack alloc] init], nil);
+}
+
 @end

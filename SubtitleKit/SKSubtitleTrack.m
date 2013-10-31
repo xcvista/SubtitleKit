@@ -86,6 +86,24 @@ MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
                                          count:len];
 }
 
+- (BOOL)isEqualToTrack:(SKSubtitleTrack *)track
+{
+    return [self.lines isEqual:track.lines] && [self.metadata isEqual:track.metadata];
+}
+
+- (NSUInteger)hash
+{
+    return [self.lines hash] ^ [self.metadata hash];
+}
+
+- (BOOL)isEqual:(id)object
+{
+    if ([object isKindOfClass:[self class]])
+        return [self isEqualToTrack:object];
+    else
+        return NO;
+}
+
 @end
 
 @implementation SKSubtitleTrack (NSCopying)
@@ -189,7 +207,7 @@ MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
     [self willChangeValueForKey:_SKSubtitleTrackLinesKey];
     @synchronized (_lines)
     {
-        [_lines sortUsingSelector:@selector(compare:)];
+        [_lines sortUsingSelector:@selector(timeCompare:)];
     }
     [self didChangeValueForKey:_SKSubtitleTrackLinesKey];
 }

@@ -16,7 +16,7 @@
 #define __REQUIRE_OBJC_SUBSCRIPTING
 #import <MSBooster/MSBooster_Private.h>
 
-NSDictionary *_SKLyricTranslationTable(void)
+static NSDictionary *_SKLyricTranslationTable(void)
 {
     static NSDictionary *table;
     if (!table)
@@ -34,7 +34,7 @@ NSDictionary *_SKLyricTranslationTable(void)
     return table;
 }
 
-NSDictionary *_SKLyricTranslationTable2(void)
+static NSDictionary *_SKLyricTranslationTable2(void)
 {
     static NSDictionary *table;
     if (!table)
@@ -52,7 +52,7 @@ NSDictionary *_SKLyricTranslationTable2(void)
     return table;
 }
 
-static __inline NSString *_SKLyricMonoline(id obj)
+static MSInline NSString *_SKLyricMonoline(id obj)
 {
     if (!obj)
         return [NSString string];
@@ -75,7 +75,7 @@ static __inline NSString *_SKLyricMonoline(id obj)
 // Stay dry.
 // I was wet, very wet.
 
-- (BOOL)_SKLyricsScanSquareBrackers:(NSString *__autoreleasing *)string
+- (BOOL)_SKLyricsScanSquareBrackets:(NSString *__autoreleasing *)string
 {
     MSScannerBegin();
     NSString *buf = nil;
@@ -95,7 +95,7 @@ static __inline NSString *_SKLyricMonoline(id obj)
     NSString *skey = nil;
     NSString *sval = nil;
     
-    MSScannerAssert([self _SKLyricsScanSquareBrackers:&buf]);
+    MSScannerAssert([self _SKLyricsScanSquareBrackets:&buf]);
     
     NSScanner *scanner = [NSScanner scannerWithString:buf];
     MSScannerAssert([scanner scanUpToString:@":" intoString:&skey]);
@@ -114,7 +114,7 @@ static __inline NSString *_SKLyricMonoline(id obj)
     NSInteger minute, second, centisecond; // note this!
     NSString *buf = nil;
     
-    MSScannerAssert([self _SKLyricsScanSquareBrackers:&buf]);
+    MSScannerAssert([self _SKLyricsScanSquareBrackets:&buf]);
     
     NSScanner *scanner = [NSScanner scannerWithString:buf];
     MSScannerAssert([scanner scanInteger:&minute]);
@@ -191,7 +191,7 @@ static __inline NSString *_SKLyricMonoline(id obj)
         }
     }
     
-    [lines sortedArrayUsingSelector:@selector(compare:)];
+    [lines sortedArrayUsingSelector:@selector(timeCompare:)];
     [lines enumerateObjectsWithOptions:NSEnumerationConcurrent
                             usingBlock:^(SKSubtitleLine *obj, NSUInteger idx, BOOL *stop) {
                                 SKSubtitleLine *next = (idx < [lines count] - 1) ? lines[idx + 1] : nil;
