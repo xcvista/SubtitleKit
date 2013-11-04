@@ -69,6 +69,27 @@
     }
 }
 
+- (void)testCompressedLRCFile
+{
+    // Load the file
+    NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
+    
+    SKSubtitleTrack *track = [SKLyricFormat trackFromContentsOfURL:[thisBundle URLForResource:@"TestCompressed" withExtension:@"lrc"]];
+    STAssertNotNil(track, nil);
+    
+    // Metadata
+    STAssertEqualObjects(track[SKArtistMetadataKey], @"Test", nil);
+    STAssertEqualObjects(track[SKAlbumMetadataKey], @"Foo", nil);
+    STAssertEqualObjects(track[SKTitleMetadataKey], @"Bar", nil);
+    STAssertEqualObjects(track[SKMakerMetadataKey], @"Someone", nil);
+    
+    // Timetags
+    for (SKSubtitleLine *line in track.lines)
+    {
+        STAssertEqualObjects(MSSTR(@"x.x-%.1lf", line.duration), line.content, nil);
+    }
+}
+
 - (void)testEmptyFile
 {
     // Load the file

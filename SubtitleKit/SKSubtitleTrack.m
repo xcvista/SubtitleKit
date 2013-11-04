@@ -122,7 +122,7 @@ MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
             id value = self[key];
             if ([value conformsToProtocol:@protocol(NSCopying)])
                 value = [value copy];
-            newSelf[key] = value;
+            newSelf[[key copy]] = value;
         }
     }
     return newSelf;

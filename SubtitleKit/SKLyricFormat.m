@@ -274,7 +274,7 @@ static MSInline NSString *_SKLyricMonoline(id obj)
             NSUInteger minute, second, millisecond;
             SKComponentsFromTimeInterval(timeInterval, NULL, &minute, &second, &millisecond);
             
-            [output appendFormat:@"[%02lu:%02lu.%02lu]", minute, second, millisecond];
+            [output appendFormat:@"[%02lu:%02lu.%02lu]", minute, second, millisecond / 10];
         }
         
         [output appendFormat:@"%@\n", _SKLyricMonoline(line)];
@@ -329,9 +329,9 @@ static MSInline NSString *_SKLyricMonoline(id obj)
         dictionary[realKey] = [thisTrack metadata][key];
     }
     
-    NSUInteger lmin, lsec;
-    SKComponentsFromTimeInterval([[[thisTrack lines] lastObject] end], NULL, &lmin, &lsec, NULL);
-    dictionary[SKLyricLengthMetadataKey] = MSSTR(@"%lu:%02lu", lmin, lsec);
+    NSUInteger lmin, lsec, lmsec;
+    SKComponentsFromTimeInterval([[[thisTrack lines] lastObject] end], NULL, &lmin, &lsec, &lmsec);
+    dictionary[SKLyricLengthMetadataKey] = MSSTR(@"%lu:%02lu.%02lu", lmin, lsec, lmsec / 10);
     
     [thisTrack setMetadata:dictionary];
     

@@ -47,6 +47,8 @@
 		1D4EACEA18226D18007A77BE /* Oneline.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D4EACE918226D18007A77BE /* Oneline.txt */; };
 		1D6F5A3B182766F900A5A107 /* SKStyledSubripFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6F5A39182766F900A5A107 /* SKStyledSubripFormat.h */; };
 		1D6F5A3C182766F900A5A107 /* SKStyledSubripFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F5A3A182766F900A5A107 /* SKStyledSubripFormat.m */; };
+		1D6F5A421827699600A5A107 /* SKLyricWritingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F5A411827699600A5A107 /* SKLyricWritingTest.m */; };
+		1D6F5A44182769C900A5A107 /* TestCompressed.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F5A43182769C900A5A107 /* TestCompressed.lrc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,8 @@
 		1D4EACE918226D18007A77BE /* Oneline.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Oneline.txt; sourceTree = "<group>"; };
 		1D6F5A39182766F900A5A107 /* SKStyledSubripFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStyledSubripFormat.h; sourceTree = "<group>"; };
 		1D6F5A3A182766F900A5A107 /* SKStyledSubripFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStyledSubripFormat.m; sourceTree = "<group>"; };
+		1D6F5A411827699600A5A107 /* SKLyricWritingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKLyricWritingTest.m; sourceTree = "<group>"; };
+		1D6F5A43182769C900A5A107 /* TestCompressed.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestCompressed.lrc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,8 +265,10 @@
 				1D4EACE718226D0D007A77BE /* Empty.txt */,
 				1D4EACE918226D18007A77BE /* Oneline.txt */,
 				1D222115182242CD00A3113A /* SKLyricParsingTest.m */,
+				1D6F5A411827699600A5A107 /* SKLyricWritingTest.m */,
 				1D222117182242E400A3113A /* Test.lrc */,
 				1D22211A1822445100A3113A /* TestOffset.lrc */,
+				1D6F5A43182769C900A5A107 /* TestCompressed.lrc */,
 				1D222121182248B600A3113A /* SKSubtitleParsingTest.m */,
 				1D2221231822491900A3113A /* Test.srt */,
 				1D4EACE318226AEF007A77BE /* TestOverlapping.srt */,
@@ -451,6 +457,7 @@
 				1D2221261822588500A3113A /* .gitignore in Resources */,
 				1D2220B61822394B00A3113A /* InfoPlist.strings in Resources */,
 				1D4EACE618226B3E007A77BE /* TestSkipping.srt in Resources */,
+				1D6F5A44182769C900A5A107 /* TestCompressed.lrc in Resources */,
 				1D222118182242E400A3113A /* Test.lrc in Resources */,
 				1D4EACEA18226D18007A77BE /* Oneline.txt in Resources */,
 				1D22211B1822445100A3113A /* TestOffset.lrc in Resources */,
@@ -482,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6F5A421827699600A5A107 /* SKLyricWritingTest.m in Sources */,
 				1D222122182248B600A3113A /* SKSubtitleParsingTest.m in Sources */,
 				1D222116182242CD00A3113A /* SKLyricParsingTest.m in Sources */,
 			);
