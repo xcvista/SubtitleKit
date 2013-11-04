@@ -49,6 +49,7 @@
 		1D6F5A3C182766F900A5A107 /* SKStyledSubripFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F5A3A182766F900A5A107 /* SKStyledSubripFormat.m */; };
 		1D6F5A421827699600A5A107 /* SKLyricWritingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F5A411827699600A5A107 /* SKLyricWritingTest.m */; };
 		1D6F5A44182769C900A5A107 /* TestCompressed.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F5A43182769C900A5A107 /* TestCompressed.lrc */; };
+		1D6F5A46182772EA00A5A107 /* SKSubtitleWritingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F5A45182772EA00A5A107 /* SKSubtitleWritingTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		1D6F5A3A182766F900A5A107 /* SKStyledSubripFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStyledSubripFormat.m; sourceTree = "<group>"; };
 		1D6F5A411827699600A5A107 /* SKLyricWritingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKLyricWritingTest.m; sourceTree = "<group>"; };
 		1D6F5A43182769C900A5A107 /* TestCompressed.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestCompressed.lrc; sourceTree = "<group>"; };
+		1D6F5A45182772EA00A5A107 /* SKSubtitleWritingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubtitleWritingTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				1D22211A1822445100A3113A /* TestOffset.lrc */,
 				1D6F5A43182769C900A5A107 /* TestCompressed.lrc */,
 				1D222121182248B600A3113A /* SKSubtitleParsingTest.m */,
+				1D6F5A45182772EA00A5A107 /* SKSubtitleWritingTest.m */,
 				1D2221231822491900A3113A /* Test.srt */,
 				1D4EACE318226AEF007A77BE /* TestOverlapping.srt */,
 				1D4EACE518226B3E007A77BE /* TestSkipping.srt */,
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6F5A46182772EA00A5A107 /* SKSubtitleWritingTest.m in Sources */,
 				1D6F5A421827699600A5A107 /* SKLyricWritingTest.m in Sources */,
 				1D222122182248B600A3113A /* SKSubtitleParsingTest.m in Sources */,
 				1D222116182242CD00A3113A /* SKLyricParsingTest.m in Sources */,
