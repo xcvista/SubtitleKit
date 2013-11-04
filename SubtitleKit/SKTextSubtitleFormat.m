@@ -31,7 +31,7 @@
     return nil;
 }
 
-#pragma Object -> file
+#pragma mark Object -> file
 
 + (NSData *)dataFromTrack:(SKSubtitleTrack *)track
 {

@@ -45,6 +45,8 @@
 		1D4EACE618226B3E007A77BE /* TestSkipping.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1D4EACE518226B3E007A77BE /* TestSkipping.srt */; };
 		1D4EACE818226D0D007A77BE /* Empty.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D4EACE718226D0D007A77BE /* Empty.txt */; };
 		1D4EACEA18226D18007A77BE /* Oneline.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D4EACE918226D18007A77BE /* Oneline.txt */; };
+		1D6F5A3B182766F900A5A107 /* SKStyledSubripFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6F5A39182766F900A5A107 /* SKStyledSubripFormat.h */; };
+		1D6F5A3C182766F900A5A107 /* SKStyledSubripFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F5A3A182766F900A5A107 /* SKStyledSubripFormat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +152,8 @@
 		1D4EACE518226B3E007A77BE /* TestSkipping.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestSkipping.srt; sourceTree = "<group>"; };
 		1D4EACE718226D0D007A77BE /* Empty.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Empty.txt; sourceTree = "<group>"; };
 		1D4EACE918226D18007A77BE /* Oneline.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Oneline.txt; sourceTree = "<group>"; };
+		1D6F5A39182766F900A5A107 /* SKStyledSubripFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStyledSubripFormat.h; sourceTree = "<group>"; };
+		1D6F5A3A182766F900A5A107 /* SKStyledSubripFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStyledSubripFormat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,8 @@
 				1D2220F318223A7C00A3113A /* SKPropertyListFormat.m */,
 				1D2220F418223A7C00A3113A /* SKSubripFormat.h */,
 				1D2220F518223A7C00A3113A /* SKSubripFormat.m */,
+				1D6F5A39182766F900A5A107 /* SKStyledSubripFormat.h */,
+				1D6F5A3A182766F900A5A107 /* SKStyledSubripFormat.m */,
 				1D2220F618223A7C00A3113A /* SKSubtitleFormat.h */,
 				1D2220F718223A7C00A3113A /* SKSubtitleFormat.m */,
 				1D2220F818223A7C00A3113A /* SKSubtitleLine.h */,
@@ -303,6 +309,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6F5A3B182766F900A5A107 /* SKStyledSubripFormat.h in Headers */,
 				1D22210D18223B0300A3113A /* SKLyricFormatStrings.h in Headers */,
 				1D22210818223A7C00A3113A /* SKSubtitleTrack.h in Headers */,
 				1D22210018223A7C00A3113A /* SKPropertyListFormat.h in Headers */,
@@ -462,6 +469,7 @@
 			files = (
 				1D22210518223A7C00A3113A /* SKSubtitleFormat.m in Sources */,
 				1D2220FF18223A7C00A3113A /* SKLyricFormat.m in Sources */,
+				1D6F5A3C182766F900A5A107 /* SKStyledSubripFormat.m in Sources */,
 				1D22210718223A7C00A3113A /* SKSubtitleLine.m in Sources */,
 				1D22210918223A7C00A3113A /* SKSubtitleTrack.m in Sources */,
 				1D22210118223A7C00A3113A /* SKPropertyListFormat.m in Sources */,

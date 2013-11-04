@@ -39,14 +39,6 @@ __class SKSubtitleTrack;
 
 @end
 
-@interface NSScanner (SKLyricScanner)
-
-- (BOOL)_SKLyricsScanSquareBrackets:(NSString **)string;
-- (BOOL)_SKLyricsScanTimeTag:(NSTimeInterval *)time; // [key:value]
-- (BOOL)_SKLyricsScanMetadata:(NSString **)value withKey:(NSString **)key; // [mm:ss.xx] (as NSTimeInterval)
-
-@end
-
 // LRC metadata keys
 #include <SubtitleKit/SKLyricFormatStrings.h>
 

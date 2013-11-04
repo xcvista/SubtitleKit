@@ -14,14 +14,8 @@ __class SKSubtitleTrack;
 
 @interface SKSubripFormat : SKTextSubtitleFormat
 
-@end
-
-@interface NSScanner (SKSubrip)
-
-- (BOOL)_SKSubripScanTimetagAssemblyWithIdentifer:(NSUInteger *)identifier
-                                             from:(NSTimeInterval *)from
-                                               to:(NSTimeInterval *)to;
-- (BOOL)_SKSubripScanTimetag:(NSTimeInterval *)time;
++ (id)lineContentFromLine:(NSString *)content;
++ (NSString *)lineFromLineContent:(id)content;
 
 @end
 

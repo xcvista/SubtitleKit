@@ -12,6 +12,15 @@
 
 #import <MSBooster/MSBooster_Private.h>
 
+@interface NSScanner (SKSubrip)
+
+- (BOOL)_SKSubripScanTimetagAssemblyWithIdentifer:(NSUInteger *)identifier
+                                             from:(NSTimeInterval *)from
+                                               to:(NSTimeInterval *)to;
+- (BOOL)_SKSubripScanTimetag:(NSTimeInterval *)time;
+
+@end
+
 @implementation NSScanner (SKSubrip)
 
 - (BOOL)_SKSubripScanTimetag:(NSTimeInterval *)time
@@ -63,7 +72,7 @@
 
 @interface SKSubtitleLine (SKSubripOutput)
 
-- (NSString *)_SKSubripRepresentationWithIdentifier:(NSUInteger)identifier;
+- (NSString *)_SKSubripRepresentationWithIdentifier:(NSUInteger)identifier sender:(Class)class;
 
 @end
 
@@ -76,20 +85,10 @@ static MSInline NSString *_SKStringFromTimetag(NSTimeInterval tag)
 
 @implementation SKSubtitleLine (SKSubripOutput)
 
-- (NSString *)_SKSubripRepresentationWithIdentifier:(NSUInteger)identifier
+- (NSString *)_SKSubripRepresentationWithIdentifier:(NSUInteger)identifier sender:(Class)class
 {
-    NSString *contentRepresentation = nil;
-    
-    if ([self.content isKindOfClass:[NSAttributedString class]])
-    {
-        // Attributed string - handle attriution!
-        contentRepresentation = [self.content string];
-    }
-    else
-    {
-        contentRepresentation = [self.content description];
-    }
-    
+    NSString *contentRepresentation = [class lineFromLineContent:self.content];
+
     return MSSTR(@"%lu\n%@ --> %@\n%@\n\n",
                  identifier,
                  _SKStringFromTimetag(self.start),
@@ -144,7 +143,7 @@ static MSInline NSString *_SKStringFromTimetag(NSTimeInterval tag)
             // New line.
             
             SKSubtitleLine *line = [[SKSubtitleLine alloc] init];
-            line.content = [buffer stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            line.content = [self lineContentFromLine:buffer];
             line.start = oldstart;
             [line setEnd:oldend];
             [track addLine:line];
@@ -197,10 +196,20 @@ static MSInline NSString *_SKStringFromTimetag(NSTimeInterval tag)
     for (NSUInteger i = 0; i < [lines count]; i++)
     {
         SKSubtitleLine *line = lines[i];
-        [annotations addObject:[line _SKSubripRepresentationWithIdentifier:i + 1]];
+        [annotations addObject:[line _SKSubripRepresentationWithIdentifier:i + 1 sender:self]];
     }
     
     return [annotations componentsJoinedByString:@""];
+}
+
++ (id)lineContentFromLine:(NSString *)content
+{
+    return [content stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+}
+
++ (NSString *)lineFromLineContent:(id)content
+{
+    return [content description];
 }
 
 @end

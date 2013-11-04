@@ -11,7 +11,7 @@
 
 __BEGIN_DECLS
 
-static __inline NSTimeInterval SKTimeIntervalFromComponents(NSUInteger hour, NSUInteger minute, NSUInteger second, NSUInteger millisecond, NSTimeInterval offset)
+static MSInline NSTimeInterval SKTimeIntervalFromComponents(NSUInteger hour, NSUInteger minute, NSUInteger second, NSUInteger millisecond, NSTimeInterval offset)
 {
     return hour * 3600.0 + minute * 60.0 + second * 1.0 + millisecond * 0.001 + offset;
 }
@@ -22,11 +22,10 @@ extern void SKComponentsFromTimeInterval(NSTimeInterval interval, NSUInteger *ho
 
 @property NSTimeInterval start;
 @property NSTimeInterval duration;
+@property NSTimeInterval end;
 @property id content;
 @property id tag;
 
-- (NSTimeInterval)end;
-- (void)setEnd:(NSTimeInterval)end;
 - (NSComparisonResult)timeCompare:(SKSubtitleLine *)other;
 
 - (BOOL)isEqualToLine:(SKSubtitleLine *)line;

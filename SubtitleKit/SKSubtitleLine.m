@@ -22,6 +22,7 @@ MSConstantString(_SKSubtitleLineContentKey, content);
 @synthesize duration = _duration;
 @synthesize content = _content;
 @synthesize tag = _tag;
+@dynamic end;
 
 - (id)copyWithZone:(NSZone *)zone
 {
