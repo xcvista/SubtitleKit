@@ -59,4 +59,5 @@ commericial license that comes with some sort of warranty.
 # Contact
 
 Author: Maxthon T. Chan &lt;<xcvista@me.com>&gt;
+
 Original designers also include: Line, WaitinZ et al.
