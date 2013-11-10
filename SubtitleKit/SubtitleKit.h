@@ -17,6 +17,7 @@
 #import <SubtitleKit/SKLyricFormat.h>
 #import <SubtitleKit/SKPropertyListFormat.h>
 #import <SubtitleKit/SKSubripFormat.h>
+#import <SubtitleKit/SKStyledSubripFormat.h>
 #import <SubtitleKit/SKSubtitleFormat.h>
 #import <SubtitleKit/SKSubtitleLine.h>
 #import <SubtitleKit/SKSubtitleTrack.h>
