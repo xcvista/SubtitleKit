@@ -13,8 +13,6 @@
 #import <AppKit/AppKit.h>
 #endif
 
-/*
- 
 #import <MSBooster/MSBooster.h>
 
 @interface NSScanner (SKHTMLScanner)
@@ -136,95 +134,97 @@
 
 @end
 
-@interface _SKStyledLyricsOptionsStack : NSObject
-
-@property NSString *tag;
-@property NSDictionary *attrib;
-@property NSUInteger location;
-
-+ (instancetype)stackItemWithTag:(NSString *)tag attributes:(NSDictionary *)attributes location:(NSUInteger)loc;
-
-@end
-
-@implementation _SKStyledLyricsOptionsStack
-
-+ (instancetype)stackItemWithTag:(NSString *)tag attributes:(NSDictionary *)attributes location:(NSUInteger)loc
-{
-    _SKStyledLyricsOptionsStack *_self = [[self alloc] init];
-    if (_self)
-    {
-        _self.tag = tag;
-        _self.attrib = attributes;
-        _self.location = loc;
-    }
-    return _self;
-}
-
-@end
-
-@interface _SKAttributeStorage : NSObject
-
-@property NSRange range;
-@property NSDictionary *attributes;
-
-@end
-
-@implementation _SKAttributeStorage
-
-@end
-
 @implementation SKStyledSubripFormat
 
 + (id)lineContentFromLine:(NSString *)content
 {
-    NSMutableString *string = [NSMutableString stringWithCapacity:[content length]];
-    NSMutableArray *attributes = [NSMutableArray array];
-    NSMutableArray *symbolStack = [NSMutableArray array];
+    // Translate outdated HTML into HTML5+CSS3
     
-    NSScanner *scanner = [NSScanner scannerWithString:[content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+    NSMutableString *buffer = [NSMutableString string];
+    NSScanner *scanner = [NSScanner scannerWithString:content];
+    
     while (![scanner isAtEnd])
     {
-        NSString *buffer = nil;
-        if ([scanner _SKStyledSubripScanUpToHTMLTag:&buffer] && [buffer length])
+        NSString *buf = NULL;
+        if ([scanner _SKStyledSubripScanUpToHTMLTag:&buf])
         {
-            [string appendString:buffer];
+            [buffer appendString:buf];
         }
         
-        NSString *tag = nil;
-        BOOL terminating = NO;
-        NSDictionary *attrib;
-        if ([scanner _SKStyledSubripScanHTMLTag:&tag isTerminatng:&terminating attributes:&attrib] && [tag length])
+        NSString *tagname = NULL;
+        BOOL status;
+        NSDictionary *properties = NULL;
+        if ([scanner _SKStyledSubripScanHTMLTag:&tagname
+                                   isTerminatng:&status
+                                     attributes:&properties])
         {
-            if (terminating)
+            NSString *tagname2 = [[tagname stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] lowercaseString];
+            
+            if ([@[@"b", @"i", @"u", @"font"] containsObject:tagname2])
             {
-                // Pop a level of
+                if (status)
+                {
+                    [buffer appendString:@"</span>"];
+                }
+                else
+                {
+                    if ([tagname2 isEqualToString:@"b"])
+                    {
+                        [buffer appendString:@"<span style=\"font-weight: bold;\">"];
+                    }
+                    else if ([tagname2 isEqualToString:@"i"])
+                    {
+                        [buffer appendString:@"<span style=\"font-style: italic;\">"];
+                    }
+                    else if ([tagname2 isEqualToString:@"u"])
+                    {
+                        [buffer appendString:@"<span style=\"text-decoration: underline\">"];
+                    }
+                    else if ([tagname2 isEqualToString:@"font"])
+                    {
+                        NSMutableString *agg = [NSMutableString string];
+                        
+                        for (NSString *key in properties)
+                        {
+                            NSString *k = [[key lowercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                            NSString *v = properties[key];
+                            if ([k isEqualToString:@"color"])
+                            {
+                                [agg appendFormat:@"color: %@;", v];
+                            }
+                            else if ([k isEqualToString:@"size"])
+                            {
+                                [agg appendFormat:@"font-size: %@;", v];
+                            }
+                            else if ([k isEqualToString:@"face"])
+                            {
+                                [agg appendFormat:@"font-family: %@", v];
+                            }
+                        }
+                        
+                        [buffer appendFormat:@"<span style=\"%@\">", agg];
+                    }
+                }
+            }
+            else
+            {
+                NSMutableString *agg = [NSMutableString string];
+                [properties enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                    [agg appendFormat:@"%@=\"%@\"", key, obj];
+                }];
                 
+                [buffer appendFormat:@"<%@%@ %@>", status ? @"/" : @"", tagname, status ? @"" : agg];
             }
         }
     }
     
-    return nil;
-}
-
-+ (NSString *)lineFromLineContent:(id)content
-{
-    if ([content isKindOfClass:[NSAttributedString class]])
-    {
-        return nil;
-    }
-    else
-        return content;
-}
-
-@end
- */
-
-@implementation SKStyledSubripFormat
-
-+ (id)lineContentFromLine:(NSString *)content
-{
-    NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:[content dataUsingEncoding:NSUTF8StringEncoding]
-                                                       documentAttributes:NULL];
+    NSDictionary *HTMLAttributes = @{
+                                     NSDocumentTypeDocumentAttribute:
+                                         NSHTMLTextDocumentType};
+    NSAttributedString *string = [[NSAttributedString alloc] initWithData:[content dataUsingEncoding:NSUTF8StringEncoding]
+                                                                  options:HTMLAttributes
+                                                       documentAttributes:NULL
+                                                                    error:NULL];
     if (![string isKindOfClass:[NSAttributedString class]])
         string = [[NSAttributedString alloc] initWithString:content];
     return string;

@@ -14,17 +14,16 @@
 		1D2220D1182239DC00A3113A /* MSBooster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D2220C81822397F00A3113A /* MSBooster.framework */; };
 		1D2220D318223A2E00A3113A /* module.map in Resources */ = {isa = PBXBuildFile; fileRef = 1D2220D218223A2E00A3113A /* module.map */; };
 		1D2220FE18223A7C00A3113A /* SKLyricFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F018223A7C00A3113A /* SKLyricFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D2220FF18223A7C00A3113A /* SKLyricFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F118223A7C00A3113A /* SKLyricFormat.m */; };
+		1D2220FF18223A7C00A3113A /* SKLyricFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F118223A7C00A3113A /* SKLyricFormat.m */; settings = {COMPILER_FLAGS = "-Wno-ambiguous-macro"; }; };
 		1D22210018223A7C00A3113A /* SKPropertyListFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F218223A7C00A3113A /* SKPropertyListFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D22210118223A7C00A3113A /* SKPropertyListFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F318223A7C00A3113A /* SKPropertyListFormat.m */; };
 		1D22210218223A7C00A3113A /* SKSubripFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F418223A7C00A3113A /* SKSubripFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D22210318223A7C00A3113A /* SKSubripFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F518223A7C00A3113A /* SKSubripFormat.m */; };
 		1D22210418223A7C00A3113A /* SKSubtitleFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F618223A7C00A3113A /* SKSubtitleFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D22210518223A7C00A3113A /* SKSubtitleFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F718223A7C00A3113A /* SKSubtitleFormat.m */; };
 		1D22210618223A7C00A3113A /* SKSubtitleLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220F818223A7C00A3113A /* SKSubtitleLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D22210718223A7C00A3113A /* SKSubtitleLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F918223A7C00A3113A /* SKSubtitleLine.m */; };
+		1D22210718223A7C00A3113A /* SKSubtitleLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F918223A7C00A3113A /* SKSubtitleLine.m */; settings = {COMPILER_FLAGS = "-Wno-ambiguous-macro"; }; };
 		1D22210818223A7C00A3113A /* SKSubtitleTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220FA18223A7C00A3113A /* SKSubtitleTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D22210918223A7C00A3113A /* SKSubtitleTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220FB18223A7C00A3113A /* SKSubtitleTrack.m */; };
+		1D22210918223A7C00A3113A /* SKSubtitleTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220FB18223A7C00A3113A /* SKSubtitleTrack.m */; settings = {COMPILER_FLAGS = "-Wno-ambiguous-macro"; }; };
 		1D22210A18223A7C00A3113A /* SKTextSubtitleFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2220FC18223A7C00A3113A /* SKTextSubtitleFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D22210B18223A7C00A3113A /* SKTextSubtitleFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220FD18223A7C00A3113A /* SKTextSubtitleFormat.m */; };
 		1D22210D18223B0300A3113A /* SKLyricFormatStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D22210C18223B0300A3113A /* SKLyricFormatStrings.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +53,7 @@
 		1D6F6DDD182953BF008A6F0B /* LICENSE.GPL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F6DDC182953BF008A6F0B /* LICENSE.GPL.md */; };
 		1D6F6DDF1829562E008A6F0B /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F6DDE1829562E008A6F0B /* LICENSE.md */; };
 		1DDD9EE1182F8BA6000652D7 /* TestStyled.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD9EE0182F8BA6000652D7 /* TestStyled.srt */; };
+		1DE2622A1834A0870087FC11 /* SKSubtitleFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2220F718223A7C00A3113A /* SKSubtitleFormat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -494,7 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D22210518223A7C00A3113A /* SKSubtitleFormat.m in Sources */,
+				1DE2622A1834A0870087FC11 /* SKSubtitleFormat.m in Sources */,
 				1D2220FF18223A7C00A3113A /* SKLyricFormat.m in Sources */,
 				1D6F5A3C182766F900A5A107 /* SKStyledSubripFormat.m in Sources */,
 				1D22210718223A7C00A3113A /* SKSubtitleLine.m in Sources */,
@@ -625,7 +625,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "SubtitleKit/SubtitleKit-Info.plist";
-				INSTALL_PATH = "@loader_path/../Frameworks";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -643,7 +644,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "SubtitleKit/SubtitleKit-Info.plist";
-				INSTALL_PATH = "@loader_path/../Frameworks";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;

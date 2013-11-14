@@ -177,7 +177,7 @@ static MSInline NSString *_SKStringFromTimetag(NSTimeInterval tag)
     if (inLine)
     {
         SKSubtitleLine *line = [[SKSubtitleLine alloc] init];
-        line.content = [buffer stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        line.content = [self lineContentFromLine:buffer];
         line.start = oldstart;
         [line setEnd:oldend];
         [track addLine:line];
