@@ -22,10 +22,6 @@
     return nil;
 }
 
-@end
-
-@implementation SKSubtitleFormat (SKHelpers)
-
 + (SKSubtitleTrack *)trackFromContentsOfFile:(NSString *)filename
 {
     NSData *data = [NSData dataWithContentsOfFile:filename];
@@ -68,6 +64,11 @@
     NSData *data = [self dataFromTrack:track];
     return [data writeToURL:URL
                  atomically:atomically];
+}
+
+- (id)init
+{
+    return self = nil;
 }
 
 @end

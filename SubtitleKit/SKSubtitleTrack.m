@@ -104,10 +104,6 @@ MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
         return NO;
 }
 
-@end
-
-@implementation SKSubtitleTrack (NSCopying)
-
 - (id)copyWithZone:(NSZone *)zone
 {
     id newSelf = [[[self class] allocWithZone:zone] init];
@@ -128,9 +124,6 @@ MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
     return newSelf;
 }
 
-@end
-
-@implementation SKSubtitleTrack (NSCoding)
 
 - (id)initWithCoder:(NSCoder *)coder
 {
@@ -147,10 +140,6 @@ MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
     [aCoder encodeObject:[self metadata] forKey:_SKSubtitleTrackMetadataKey];
     [aCoder encodeObject:[self lines] forKey:_SKSubtitleTrackLinesKey];
 }
-
-@end
-
-@implementation SKSubtitleTrack (SKManipulation)
 
 #pragma mark - Line manipulation
 
@@ -266,6 +255,14 @@ MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@:\n%@\n%@", self.metadata[SKTitleMetadataKey], self.metadata, self.lines];
+}
+
+- (void)offsetAllLines:(NSTimeInterval)offset
+{
+    for (SKSubtitleLine *line in self)
+    {
+        line.start += offset;
+    }
 }
 
 @end

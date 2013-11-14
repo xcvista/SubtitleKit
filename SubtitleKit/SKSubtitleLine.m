@@ -112,7 +112,22 @@ MSConstantString(_SKSubtitleLineContentKey, content);
         return NO;
 }
 
+- (NSString *)stringContent
+{
+    if ([self.content isKindOfClass:[NSAttributedString class]])
+        return [self.content string];
+    else if ([self.content isKindOfClass:[NSString class]])
+        return self.content;
+    else
+        return [self.content description];
+}
+
 @end
+
+NSTimeInterval SKTimeIntervalFromComponents(NSUInteger hour, NSUInteger minute, NSUInteger second, NSUInteger millisecond, NSTimeInterval offset)
+{
+    return hour * 3600.0 + minute * 60.0 + second * 1.0 + millisecond * 0.001 + offset;
+}
 
 void SKComponentsFromTimeInterval(NSTimeInterval interval, NSUInteger *hour, NSUInteger *minute, NSUInteger *second, NSUInteger *millisecond)
 {
@@ -136,15 +151,3 @@ void SKComponentsFromTimeInterval(NSTimeInterval interval, NSUInteger *hour, NSU
     
     MSAssignPointer(millisecond, (NSUInteger)(round(interval * 1000.0)));
 }
-
-@implementation SKSubtitleTrack (SKOffsetting)
-
-- (void)offsetAllLines:(NSTimeInterval)offset
-{
-    for (SKSubtitleLine *line in self)
-    {
-        line.start += offset;
-    }
-}
-
-@end

@@ -355,10 +355,6 @@ static MSInline NSString *_SKLyricMonoline(id obj)
     return [[self stringFromTrack:track compressed:compress] dataUsingEncoding:encoding];
 }
 
-@end
-
-@implementation SKLyricFormat (SKHelper)
-
 + (BOOL)writeTrack:(SKSubtitleTrack *)track
             toFile:(NSString *)fileName
         compressed:(BOOL)compress

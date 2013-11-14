@@ -8,6 +8,10 @@
 
 #import <SubtitleKit/SubtitleKit.h>
 
+/**
+ SKStyledSubripFormat is a concrete subclass of SKSubripFormat that understands
+ HTML style tags.
+ */
 @interface SKStyledSubripFormat : SKSubripFormat
 
 @end

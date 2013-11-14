@@ -8,6 +8,12 @@
 
 #import <SubtitleKit/SKSubtitleFormat.h>
 
+/**
+ SKPropertyListFormat is a concrete subclass of SKSubtitleFormat, providing
+ support for single track subtitles stored as an Objective-C archive.
+ 
+ @warning   This is not a portable format.
+ */
 @interface SKPropertyListFormat : SKSubtitleFormat
 
 @end
