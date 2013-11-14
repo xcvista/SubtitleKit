@@ -3,7 +3,7 @@
 SubtitleKit is a framework written in Objective-C that can handle various of
 formats of subtitles and lyric text files.
 
-# History
+## History
 
 Subtitler, the parent project of SubtitleKit, was started as a hobby project
 intended to support a translation team I used to participate actively, [Deefun]
@@ -25,7 +25,7 @@ sort of resolution of the situation.
 This is the genesis of this project, the renovation of an old but trusted free
 subtitle editor.
 
-# Features
+## Features
 
 This subtitle handling library is implemented in 100% portable (*) Objective-C.
 It have the following features:
@@ -49,14 +49,14 @@ The following formats requires Cocoa (Touch) or GNUstep GUI environments:
 *   SubStation Alpha (`ssa` and `ass`)
 *   Matroska (`mks`, non-subtitle streams are ignored.)
 
-# License
+## License
 
-This code is licensed under GNU LGPL v3 or up.
+This code is licensed under [GNU LGPL v3](LICENSE.md) or up.
 
 Alternatively, you can contact me for other licensing options, including a
 commericial license that comes with some sort of warranty.
 
-# Contact
+## Contact
 
 Author: Maxthon T. Chan &lt;<xcvista@me.com>&gt;
 
