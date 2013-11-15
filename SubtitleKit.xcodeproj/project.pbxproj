@@ -168,6 +168,7 @@
 		1D6F6DDA18295279008A6F0B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1D6F6DDC182953BF008A6F0B /* LICENSE.GPL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.GPL.md; sourceTree = "<group>"; };
 		1D6F6DDE1829562E008A6F0B /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
+		1D9CE7F81835EAFC007B7D74 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		1DDD9EE0182F8BA6000652D7 /* TestStyled.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestStyled.srt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				1D2221251822588500A3113A /* .gitignore */,
+				1D9CE7F81835EAFC007B7D74 /* .travis.yml */,
 				1D6F6DDA18295279008A6F0B /* README.md */,
 				1D6F6DDE1829562E008A6F0B /* LICENSE.md */,
 				1D6F6DDC182953BF008A6F0B /* LICENSE.GPL.md */,
@@ -637,7 +639,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -646,7 +647,6 @@
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6CF3DC33-4E91-4D75-BF1C-21896BD3130A";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -656,7 +656,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -666,7 +665,6 @@
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6CF3DC33-4E91-4D75-BF1C-21896BD3130A";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};

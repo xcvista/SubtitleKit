@@ -1,0 +1,4 @@
+language: objective-c
+before-install:
+    - git submodule update --init
+script: xctool -project SubtitleKit.xcodeproj -scheme SubtitleKit test
