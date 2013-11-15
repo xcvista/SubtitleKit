@@ -3,6 +3,10 @@
 SubtitleKit is a framework written in Objective-C that can handle various of
 formats of subtitles and lyric text files.
 
+Travis CI build status:
+[![Build Status](https://travis-ci.org/xcvista/SubtitleKit.png?branch=master)]
+(https://travis-ci.org/xcvista/SubtitleKit)
+
 ## History
 
 Subtitler, the parent project of SubtitleKit, was started as a hobby project
