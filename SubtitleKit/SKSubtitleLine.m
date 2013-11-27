@@ -54,6 +54,31 @@ MSConstantString(_SKSubtitleLineContentKey, content);
         [aCoder encodeObject:[self valueForKey:key] forKey:key];
 }
 
+- (NSTimeInterval)duration
+{
+    @synchronized (self)
+    {
+        return _duration;
+    }
+}
+
+- (void)setDuration:(NSTimeInterval)duration
+{
+    BOOL dead = NO;
+    [self willChangeValueForKey:@"duration"];
+    @synchronized (self)
+    {
+        if (duration < 0)
+            dead = YES;
+        else
+            _duration = duration;
+    }
+    [self didChangeValueForKey:@"duration"];
+    if (dead)
+        [NSException raise:NSInvalidArgumentException
+                    format:@"Duration is negative."];
+}
+
 - (NSTimeInterval)end
 {
     @synchronized (self)
@@ -120,6 +145,12 @@ MSConstantString(_SKSubtitleLineContentKey, content);
         return self.content;
     else
         return [self.content description];
+}
+
+- (BOOL)isInTimeRange:(NSTimeInterval)time
+{
+    NSTimeInterval interval = time - self.start;
+    return (interval >= 0) && (interval <= self.duration);
 }
 
 @end

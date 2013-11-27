@@ -90,6 +90,13 @@ extern void SKComponentsFromTimeInterval(NSTimeInterval interval, NSUInteger *ho
  */
 - (BOOL)isEqualToLine:(SKSubtitleLine *)line;
 
+/**
+ Tell if the given time falls in the time range if the line.
+ 
+ @param     time        The given time.
+ */
+- (BOOL)isInTimeRange:(NSTimeInterval)time;
+
 @end
 
 __END_DECLS

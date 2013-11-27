@@ -151,6 +151,24 @@ MSConstantString(_SKSubtitleTrackMetadataKey, metadata);
     }
 }
 
+- (NSArray *)linesAtIndexes:(NSIndexSet *)indexes
+{
+    @synchronized (_lines)
+    {
+        return [_lines objectsAtIndexes:indexes];
+    }
+}
+
+- (NSArray *)linesAtTime:(NSTimeInterval)time
+{
+    @synchronized (_lines)
+    {
+        return [_lines where:^BOOL(SKSubtitleLine *item) {
+            return [item isInTimeRange:time];
+        }];
+    }
+}
+
 - (void)setLine:(SKSubtitleLine *)line atIndex:(NSUInteger)index
 {
     [self willChangeValueForKey:_SKSubtitleTrackLinesKey];

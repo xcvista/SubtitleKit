@@ -58,6 +58,20 @@ __class SKSubtitleLine;
 - (SKSubtitleLine *)lineAtIndex:(NSUInteger)index;
 
 /**
+ Get lines at indexes
+ 
+ @param     indexes     Indexes of the lines.
+ */
+- (NSArray *)linesAtIndexes:(NSIndexSet *)indexes;
+
+/**
+ Get all lines at a given time.
+ 
+ @param     time        The occuring time of the line.
+ */
+- (NSArray *)linesAtTime:(NSTimeInterval)time;
+
+/**
  Set a line at a certain index.
  
  @param     line        The line to be set.
@@ -78,6 +92,7 @@ __class SKSubtitleLine;
  @param     index       The index of the line to be removed.
  */
 - (void)removeLineAtIndex:(NSUInteger)index;
+
 #if __has_feature(objc_subscripting)
 
 /**
@@ -96,6 +111,7 @@ __class SKSubtitleLine;
  @see       lineAtIndex:
  */
 - (SKSubtitleLine *)objectAtIndexedSubscript:(NSUInteger)index;
+
 #endif // __has_feature(objc_subscripting)
 
 /**
@@ -133,7 +149,9 @@ __class SKSubtitleLine;
  @param     key         Metadata key.
  */
 - (void)removeMetadataForKey:(NSString *)key;
+
 #if __has_feature(objc_subscripting)
+
 /**
  Set the metadata of the given key.
  
@@ -150,6 +168,7 @@ __class SKSubtitleLine;
  @see       metadataForKey:
  */
 - (id)objectForKeyedSubscript:(NSString *)key;
+
 #endif // __has_feature(objc_subscripting)
 
 /// @name   Offsetting lines in track
