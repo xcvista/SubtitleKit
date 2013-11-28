@@ -53,6 +53,10 @@ The following formats requires Cocoa (Touch) or GNUstep GUI environments:
 *   SubStation Alpha (`ssa` and `ass`)
 *   Matroska (`mks`, non-subtitle streams are ignored.)
 
+You can also read about [technical details](Documentation/Technical.md), [API
+Reference](http://www.maxchan.info/references/subtitlekit) and [Credits]
+(Documentation/Credits.md).
+
 ## License
 
 This code is licensed under [GNU LGPL v3](LICENSE.md) or up.

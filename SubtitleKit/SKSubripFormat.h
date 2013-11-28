@@ -16,6 +16,8 @@ __class SKSubtitleTrack;
  `SKSubripFormat` is a concrete subclass of `SKTextSubtitleFormat` implementing
  the parser and writer of Subrip format.
  
+ ## Introduction to Subrip format
+ 
  Subrip is a common timed text format for video. A platheora of player software
  have the ability to open and display this format.
  

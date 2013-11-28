@@ -20,12 +20,12 @@ __class SKSubtitleTrack;
  
  ## Notes on subclassing
  
- You must override `stringFromTrack:` and `trackFromString:` methods in your
+ You must override `+stringFromTrack:` and `+trackFromString:` methods in your
  subclass.
  
- `dataFromTrack:` and `trackFromData:` methods from `SKSubtitleFormat` is
- implemented in this class, calling `dataFromTrack:encoding:` and 
- `trackFromData:encoding:` with default encoding, `NSUTF8StringEncoding`.
+ `+dataFromTrack:` and `+trackFromData:` methods from `SKSubtitleFormat` is
+ implemented in this class, calling `+dataFromTrack:encoding:` and
+ `+trackFromData:encoding:` with default encoding, `NSUTF8StringEncoding`.
  */
 @interface SKTextSubtitleFormat : SKSubtitleFormat
 

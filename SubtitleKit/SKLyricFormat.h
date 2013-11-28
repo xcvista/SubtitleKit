@@ -16,6 +16,8 @@ __class SKSubtitleTrack;
  `SKLyricFormat` is a concrete subclass of `SKTextSubtitleFormat` implementing
  the parser and writer of text lyrics format.
  
+ ## Introduction to lyric file format
+ 
  Text lyrics format is a commonly-used file format for timed lyrics of songs. A
  platheora of software have the ability to open and display this format.
  
